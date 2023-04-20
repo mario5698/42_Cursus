@@ -21,3 +21,11 @@ void check_comparations(int c)
 	else
 		printf(RED"\nCheck KO [X]"reset);
 }
+
+void check_comparations(int c)
+{
+	if(c)
+		printf(GRN"\nCheck OK [✓]"reset);
+	else
+		printf(RED"\nCheck KO [X]"reset);
+}
