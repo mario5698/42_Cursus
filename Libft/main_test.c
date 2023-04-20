@@ -11,7 +11,12 @@ int main(void)
 	char lettersChar[]={'2','A','a','*','\0'};
 	char phrase1[6]={'a','d','i','o','s'};
 	char phrase2[10]={'h','o','l','a',' '};
+	char phrase3[6]={'a','d','i','o','s'};
+	char str[]="ho la que tal";
+	char to_find[]="la";
+
 	unsigned int num = 5 ;
+
 	test_isalnum(letters);
 	test_isalpha(letters);
 	test_isascii(letters);
@@ -22,13 +27,12 @@ int main(void)
 	test_strlen(lettersChar);
 	test_strcat(phrase2, phrase1);
 	test_strlcpy(phrase2, phrase1, num);
-
+	test_strncmp(phrase1,phrase3, num);
+	test_strnstr(str, to_find, num);
 	return(0);
+//char	*ft_strnstr(char *str, char *to_find, unsigned int nb);
 }
 
 /*
-char	*ft_strcat(char *dest, char *src);
 int		ft_atoi(char *str);
-int		ft_strncmp(char *s1, char *s2, unsigned int n);
-char	*ft_strnstr(char *str, char *to_find, unsigned int nb);
 */

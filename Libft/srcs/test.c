@@ -156,4 +156,24 @@ void test_strlcpy(char *dest, char *src, unsigned int size)
 	else
 		check_comparations(0);
 }
-//unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
+
+void 	test_strncmp(char *s1,char *s2, size_t n )
+{
+	printf(CYN"\nTEST STRNCMP\n"reset);
+	printf("Comparation\n%d -> %d", ft_strncmp(s1, s2, n), strncmp(s1, s2, n));
+
+	if(ft_strncmp(s1, s2, n) == strncmp(s1, s2, n))
+		check_comparations(1);
+	else
+		check_comparations(0);
+}
+
+void test_strnstr (char *str, char *to_find, unsigned int nb) 
+{
+	printf(CYN"\nTEST STRSTR\n"reset);
+	printf("Comparation\n%s -> %s\n", ft_strnstr(str, to_find, nb), strnstr(str, to_find, nb));
+	if(ft_strnstr(str, to_find, nb) == strnstr(str, to_find, nb))
+		check_comparations(1);
+	else
+		check_comparations(0);
+}

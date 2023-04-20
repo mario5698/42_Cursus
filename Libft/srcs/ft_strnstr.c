@@ -23,7 +23,7 @@ char	*ft_strnstr(char *str, char *to_find, unsigned int nb)
 		if (*str == *to_find)
 		{
 			i = 1;
-			while (to_find[i] && str[i] == to_find[i])
+			while (to_find[i] && str[i] == to_find[i] )
 				i++;
 			if (!to_find[i])
 				return (str);
