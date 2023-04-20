@@ -13,13 +13,21 @@ int	ft_atoi(char *str)
 {
 	int	n;
 	int	negative;
-	
-	if(str[1] == '-')
-		negative=1;
+	int	i;
+
+	i = 0;
 	n = 0;
-	while (*str >= '0' && *str <= '9')
-		n = n * 10 + *str++ - '0';
-	if(negative)
+	if(str[i] == '-')
+	{
+		negative=1;
+		i++;
+	}
+	while (str[i] >= '0' && str[i] <= '9')
+	{
+		n = n * 10 + str[i] - '0';
+		i++;
+	}
+	if (negative)
 	{
 		n = n * -1;
 	}

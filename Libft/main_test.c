@@ -14,6 +14,7 @@ int main(void)
 	char phrase3[6]={'a','d','i','o','s'};
 	char str[]="ho la que tal";
 	char to_find[]="la";
+	char nums[]="-564654";
 
 	unsigned int num = 5 ;
 
@@ -29,10 +30,7 @@ int main(void)
 	test_strlcpy(phrase2, phrase1, num);
 	test_strncmp(phrase1,phrase3, num);
 	test_strnstr(str, to_find, num);
-	return(0);
-//char	*ft_strnstr(char *str, char *to_find, unsigned int nb);
-}
+	test_atoi(nums);
 
-/*
-int		ft_atoi(char *str);
-*/
+	return(0);
+}
