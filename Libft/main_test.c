@@ -15,7 +15,6 @@ int main(void)
 	char str[]="ho la que tal";
 	char to_find[]="la";
 	char nums[]="-564654";
-
 	unsigned int num = 5 ;
 
 	test_isalnum(letters);
