@@ -8,8 +8,10 @@
 int main(void)
 {
 	int letters[]={'2','A','a','*','/200','\0'};
-	char lettersChar[]={'2','A','a','*','/200','\0'};
-	
+	char lettersChar[]={'2','A','a','*','\0'};
+	char phrase1[6]={'a','d','i','o','s'};
+	char phrase2[10]={'h','o','l','a',' '};
+	unsigned int num = 5 ;
 	test_isalnum(letters);
 	test_isalpha(letters);
 	test_isascii(letters);
@@ -18,12 +20,13 @@ int main(void)
 	test_tolower(letters);
 	test_toupper(letters);
 	test_strlen(lettersChar);
+	test_strcat(phrase2, phrase1);
+	test_strlcpy(phrase2, phrase1, num);
+
 	return(0);
 }
 
 /*
-
-int		ft_strlen(char *s);
 char	*ft_strcat(char *dest, char *src);
 int		ft_atoi(char *str);
 int		ft_strncmp(char *s1, char *s2, unsigned int n);

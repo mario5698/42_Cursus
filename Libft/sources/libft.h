@@ -13,4 +13,6 @@ char	*ft_strnstr(char *str, char *to_find, unsigned int nb);
 int		ft_tolower(int c);
 int		ft_toupper(int c);
 void	test_strlen(char *s);
+unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size);
+
 #endif
