@@ -8,7 +8,8 @@
 int main(void)
 {
 	int letters[]={'2','A','a','*','/200','\0'};
-
+	char lettersChar[]={'2','A','a','*','/200','\0'};
+	
 	test_isalnum(letters);
 	test_isalpha(letters);
 	test_isascii(letters);
@@ -16,6 +17,7 @@ int main(void)
 	test_isprint(letters);
 	test_tolower(letters);
 	test_toupper(letters);
+	test_strlen(lettersChar);
 	return(0);
 }
 

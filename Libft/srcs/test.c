@@ -1,10 +1,19 @@
 #include <stdio.h>
 #include <ctype.h>
+#include <string.h>
 #include "../sources/libft.h"
 #include "../sources/color.h"
 void check(int c, int(*f)(int))
 {
 	if(f(c))
+		printf(GRN"\nCheck OK [✓]"reset);
+	else
+		printf(RED"\nCheck KO [X]"reset);
+}
+
+void check_comparations(int c)
+{
+	if(c)
 		printf(GRN"\nCheck OK [✓]"reset);
 	else
 		printf(RED"\nCheck KO [X]"reset);
@@ -106,4 +115,20 @@ void	test_toupper(int *letters)
 		check(letters[i], &toupper);
 		i++;
 	}
+}
+
+void	test_strlen(char *s)
+{
+	int lenghtmy;
+	int lenghtot;
+
+	lenghtmy = ft_strlen(s);
+	lenghtot= strlen(s);
+	printf(CYN"\nTEST STRLEN\n"reset);
+	printf("\nPhrase Test: %s",s);
+	printf("\nlenght %d %d ",lenghtmy, lenghtot);	
+	if(lenghtmy == lenghtot)
+		check_comparations(1);
+	else
+		check_comparations(0);
 }

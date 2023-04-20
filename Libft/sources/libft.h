@@ -12,4 +12,5 @@ int		ft_strncmp(char *s1, char *s2, unsigned int n);
 char	*ft_strnstr(char *str, char *to_find, unsigned int nb);
 int		ft_tolower(int c);
 int		ft_toupper(int c);
+void	test_strlen(char *s);
 #endif
