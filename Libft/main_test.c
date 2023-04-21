@@ -27,7 +27,7 @@ int main(void)
 	char str[]="ho la que tal";
 	char to_find[]="la";
 	char nums[]="-564654";
-	unsigned int num = 5 ;
+	ft_size_t num = 5 ;
 
 	test_isalnum(letters);
 	test_isalpha(letters);
@@ -38,7 +38,7 @@ int main(void)
 	test_toupper(letters);
 	test_strlen(lettersChar);
 	test_strcat(phrase2, phrase1);
-	test_strlcpy(phrase2, phrase1, num);
+	test_strlcpy(phrase2, phrase1);
 	test_strncmp(phrase1,phrase3, num);
 	test_strnstr(str, to_find, num);
 	test_atoi(nums);

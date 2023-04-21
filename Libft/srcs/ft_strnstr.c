@@ -9,10 +9,11 @@
 /*   Updated: 2023/04/19 19:24:54 by marancib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "../sources/libft.h"
 
-char	*ft_strnstr(char *str, char *to_find, unsigned int nb)
+const char	*ft_strnstr(const char *str, const char *to_find, ft_size_t nb)
 {
-	unsigned int	j;
+	ft_size_t		j;
 	int				i;
 
 	j = 0;

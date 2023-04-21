@@ -10,7 +10,7 @@ void	test_isprint(int *letters);
 void	test_tolower(int *letters);
 void	test_toupper(int *letters);
 void	test_strcat(char *s1, char *s2);
-void 	test_strlcpy(char *dest, char *src, unsigned int size);
+void 	test_strlcpy(char *dest, char *src);
 void 	test_strncmp(char *s1,char *s2, size_t n );
 void	test_strnstr (char *str, char *to_find, unsigned int nb);
 void	test_atoi(char *str);

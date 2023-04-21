@@ -44,12 +44,12 @@ void	test_strcat(char *s1, char *s2)
 		check_comparations(0);
 }
 
-void	test_strlcpy(char *dest, char *src, unsigned int size)
+void	test_strlcpy(char *dest, char *src)
 {
 	printf(CYN"\n\nTEST STRLCPY\n"reset);
-	printf("Comparation\n%u -> %lu", ft_strlcpy(dest, src, size),
-		strlcpy(dest, src, size));
-	if (ft_strlcpy(dest, src, size) == strlcpy(dest, src, size))
+	printf("Comparation\n%s -> %s", ft_strcpy(dest, src),
+		strcpy(dest, src));
+	if (ft_strcpy(dest, src) == strcpy(dest, src))
 		check_comparations(1);
 	else
 		check_comparations(0);
