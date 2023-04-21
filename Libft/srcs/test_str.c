@@ -18,17 +18,12 @@
 #include "../sources/color.h"
 #include "../sources/test.h"
 
-void	test_strlen(char *s)
+void	test_strlen(const char *s)
 {
-	int	lenghtmy;
-	int	lenghtot;
-
-	lenghtmy = ft_strlen(s);
-	lenghtot = strlen(s);
 	printf(CYN"\n\nTEST STRLEN\n"reset);
 	printf("\nPhrase Test: %s", s);
-	printf("\nlenght %d %d ", lenghtmy, lenghtot);
-	if (lenghtmy == lenghtot)
+	printf("\nlenght %lu %lu ",ft_strlen(s), strlen(s));
+	if ( ft_strlen(s) ==  strlen(s))
 		check_comparations(1);
 	else
 		check_comparations(0);
@@ -76,12 +71,34 @@ void	test_strnstr(char *str, char *to_find, unsigned int nb)
 		check_comparations(0);
 }
 
- void test_strchr(const char *str, int to_find)
+void test_strchr(const char *str, int to_find)
 {
-	printf(CYN"\n\nTEST STRCHR\n"reset);
+	printf(CYN"\n\nTEST STRRCHR\n"reset);
 	printf("Comparation\n%s -> %s", ft_strchr(str, to_find),
 		strchr(str, to_find));
 	if (ft_strchr(str, to_find) == strchr(str, to_find))
+		check_comparations(1);
+	else
+		check_comparations(0);
+}
+
+void test_strrchr(const char *str, int to_find)
+{
+	printf(CYN"\n\nTEST STRCHR\n"reset);
+	printf("Comparation\n%s -> %s", ft_strrchr(str, to_find),
+		strrchr(str, to_find));
+	if (ft_strrchr(str, to_find) == strrchr(str, to_find))
+		check_comparations(1);
+	else
+		check_comparations(0);
+}
+
+void	test_strdup(const char *src)
+{
+	printf(CYN"\n\nTEST STRDUP\n"reset);
+	printf("Comparation\n%s -> %s", ft_strdup(src),
+		strdup(src));
+	if (ft_strdup(src) == strdup(src))
 		check_comparations(1);
 	else
 		check_comparations(0);

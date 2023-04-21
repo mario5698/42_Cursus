@@ -3,6 +3,7 @@
 void 	check(int c, int(*f)(int));
 void	check_comparations(int c);
 void 	test_isalnum(int *letters);
+void	test_strlen(const char *s);
 void	test_isalpha(int *letters);
 void	test_isascii(int *letters);
 void	test_isdigit(int *letters);
@@ -15,4 +16,6 @@ void 	test_strncmp(char *s1,char *s2, size_t n );
 void	test_strnstr (char *str, char *to_find, unsigned int nb);
 void	test_atoi(char *str);
 void 	test_strchr(const char *str, int to_find);
+void	test_strrchr(const char *s, int c);
+void	test_strdup(const char *src);
 #endif

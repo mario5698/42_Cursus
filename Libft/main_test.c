@@ -36,13 +36,14 @@ int main(void)
 	test_isprint(letters);
 	test_tolower(letters);
 	test_toupper(letters);
-	test_strlen(lettersChar);
+	test_strlen(str);
 	test_strcat(phrase2, phrase1);
 	test_strlcpy(phrase2, phrase1);
 	test_strncmp(phrase1,phrase3, num);
 	test_strnstr(str, to_find, num);
 	test_atoi(nums);
 	test_strchr(str, letter);
-
+	test_strrchr(str, letter);
+	test_strdup(str);
 	return(0);
 }

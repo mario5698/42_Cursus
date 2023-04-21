@@ -19,7 +19,7 @@ const char	*ft_strrchr(const char *s, int c)
 	j = 0;
 	if (c <0)
 		return (s);
-	while (s[i])
+	while (s[i] !='\0')
 	{
 		if (s[i] == (char)c)
 		{
@@ -27,5 +27,10 @@ const char	*ft_strrchr(const char *s, int c)
 		}
 		i++;
 	}
-	return (s[j]);
+
+	if(j>0 && s[i]=='\0')
+	{
+		return (s+j);
+	}
+	return (0);
 }

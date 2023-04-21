@@ -4,7 +4,8 @@ srcs/ft_isascii.o srcs/ft_isdigit.o srcs/ft_isprint.o \
 srcs/ft_strcat.o srcs/ft_strcpy.o srcs/ft_strlen.o \
 srcs/ft_strncmp.o srcs/ft_strnstr.o srcs/ft_tolower.o \
 srcs/ft_toupper.o srcs/test.o srcs/ft_strlen.o srcs/test_check.o \
-srcs/test_is.o srcs/test_str.o srcs/ft_strchr.o
+srcs/test_is.o srcs/test_str.o srcs/ft_strchr.o srcs/ft_strrchr.o \
+srcs/ft_strdup.o
 CFLAGS = -Wall -Werror -Wextra
 
 ${NAME}: ${OBJECTS}
