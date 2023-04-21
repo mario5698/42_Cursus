@@ -9,7 +9,7 @@
 /*   Updated: 2023/04/19 18:38:07 by marancib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-int	ft_atoi(char *str)
+int	ft_atoi(const char *str)
 {
 	int	n;
 	int	negative;

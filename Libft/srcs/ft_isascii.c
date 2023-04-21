@@ -10,12 +10,12 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isascii(int digit)
+int	ft_isascii(int c)
 {	
 	int	isdigit;
 
 	isdigit = 0 ;
-	if (digit >= 0 && digit <= 127)
+	if (c >= 0 && c <= 127)
 		isdigit = 1;
 	return (isdigit);
 }

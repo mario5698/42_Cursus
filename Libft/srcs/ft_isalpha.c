@@ -10,13 +10,13 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isalpha(int letter)
+int	ft_isalpha(int c)
 {	
 	int	isalpha;
 
 	isalpha = 0 ;
-	if ((letter >= 'A' && letter <= 'Z') || \
-	(letter >= 'a' && letter <= 'z'))
+	if ((c >= 'A' && c <= 'Z') || \
+	(c >= 'a' && c <= 'z'))
 		isalpha = 1;
 	return (isalpha);
 }

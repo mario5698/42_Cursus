@@ -10,12 +10,12 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isdigit(int digit)
+int	ft_isdigit(int c)
 {	
 	int	isdigit;
 
 	isdigit = 0 ;
-	if (digit >= '0' && digit <= '9')
+	if (c >= '0' && c <= '9')
 		isdigit = 1;
 	return (isdigit);
 }

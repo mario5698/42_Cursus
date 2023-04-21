@@ -10,12 +10,12 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isprint(int letter)
+int	ft_isprint(int c)
 {	
 	int	isprint;
 
 	isprint = 0 ;
-	if (letter >= 32 && letter <= 126)
+	if (c >= 32 && c <= 126)
 		isprint = 1;
 	return (isprint);
 }
