@@ -23,7 +23,7 @@ int main(void)
 	char phrase1[6]={'a','d','i','o','s'};
 	char phrase2[10]={'h','o','l','a',' '};
 	char phrase3[6]={'a','d','i','o','s'};
-	char str[]="ho la que tal";
+	char str[]="ho la que tal \0";
 	char to_find[]="la";
 	char nums[]="-564654";
 	char letter='a';
@@ -44,6 +44,6 @@ int main(void)
 	test_atoi(nums);
 	test_strchr(str, letter);
 	test_strrchr(str, letter);
-	test_strdup(str);
+	test_strdup(to_find);
 	return(0);
 }

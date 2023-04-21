@@ -98,7 +98,7 @@ void	test_strdup(const char *src)
 	printf(CYN"\n\nTEST STRDUP\n"reset);
 	printf("Comparation\n%s -> %s", ft_strdup(src),
 		strdup(src));
-	if (ft_strdup(src) == strdup(src))
+	if (*ft_strdup(src) == *strdup(src))
 		check_comparations(1);
 	else
 		check_comparations(0);
