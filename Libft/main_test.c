@@ -25,9 +25,13 @@ int main(void)
 	char phrase3[6]={'a','d','i','o','s'};
 	char str[]="ho la que tal \0";
 	char to_find[]="la";
+	char to_compare[]="la";
 	char nums[]="-564654";
+	char phrasestrcpy[16];
 	char letter='a';
-	ft_size_t num = 5 ;
+	void *dst;
+	void *src;
+	ft_size_t num = 3 ;
 
 	test_isalnum(letters);
 	test_isalpha(letters);
@@ -45,5 +49,9 @@ int main(void)
 	test_strchr(str, letter);
 	test_strrchr(str, letter);
 	test_strdup(to_find);
+	test_memcpy(phrasestrcpy, str, num);
+	//test_memset(dst, letter, num);
+	test_memchr(str, letter, num);
+	test_memcmp(to_find, to_compare, num);
 	return(0);
 }

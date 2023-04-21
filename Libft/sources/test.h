@@ -18,4 +18,9 @@ void	test_atoi(char *str);
 void 	test_strchr(const char *str, int to_find);
 void	test_strrchr(const char *s, int c);
 void	test_strdup(const char *src);
+void	test_memcpy(void *restrict dest, const void *restrict src, ft_size_t n);
+void 	test_memset(void *s, int c, ft_size_t n);
+void 	test_memchr(const void *s, int c, ft_size_t n);
+void	test_memcmp(const void *s1, const void *s2, ft_size_t n);
+
 #endif
