@@ -1,25 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marancib <marancib@student.42barcel>       +#+  +:+       +#+        */
+/*   By: marancib <marancib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/19 19:23:01 by marancib          #+#    #+#             */
-/*   Updated: 2023/04/19 19:23:02 by marancib         ###   ########.fr       */
+/*   Created: 2023/02/20 23:08:14 by marancib          #+#    #+#             */
+/*   Updated: 2023/04/19 19:24:54 by marancib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strcpy(char *dest, const char *src)
+const char	*ft_strrchr(const char *s, int c)
 {
-	int	i;
-
-	i = 0;
-	while (src[i] != '\0')
+	if (c <0)
+		return (s);
+	while (*s)
 	{
-		dest[i] = src[i];
-		i++;
+		if (*s == (char)c)
+		{
+			return (s);
+		}
+		s++;
 	}
-		dest[i++] = '\0';
-	return (dest);
+	return (0);
 }

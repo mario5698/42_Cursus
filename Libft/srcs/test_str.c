@@ -75,3 +75,14 @@ void	test_strnstr(char *str, char *to_find, unsigned int nb)
 	else
 		check_comparations(0);
 }
+
+ void test_strchr(const char *str, int to_find)
+{
+	printf(CYN"\n\nTEST STRCHR\n"reset);
+	printf("Comparation\n%s -> %s", ft_strchr(str, to_find),
+		strchr(str, to_find));
+	if (ft_strchr(str, to_find) == strchr(str, to_find))
+		check_comparations(1);
+	else
+		check_comparations(0);
+}

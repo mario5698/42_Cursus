@@ -16,4 +16,5 @@ int		ft_toupper(int c);
 void	test_strlen(char *s);
 char	*ft_strcpy(char *dest, const char *src);
 void 	ft_memset	(void *s, int c , ft_size_t n);
+const char	*ft_strchr(const char *s, int c);
 #endif
