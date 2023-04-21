@@ -15,5 +15,5 @@ int		ft_tolower(int c);
 int		ft_toupper(int c);
 void	test_strlen(char *s);
 unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size);
-void memset	(void *s, int c , ft_size_t n);
+void 	ft_memset	(void *s, int c , ft_size_t n);
 #endif

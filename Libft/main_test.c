@@ -1,8 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main_test.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: marancib <marancib@student.42barcel>       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/04/21 13:58:47 by marancib          #+#    #+#             */
+/*   Updated: 2023/04/21 13:58:48 by marancib         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <stdio.h>
 #include <ctype.h>
-#include <libft.h>
-#include <color.h>
-#include <test.h>
+#include "sources/libft.h"
+#include "sources/color.h"
+#include "sources/test.h"
 
 
 int main(void)

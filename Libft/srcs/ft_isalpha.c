@@ -15,9 +15,8 @@ int	ft_isalpha(int letter)
 	int	isalpha;
 
 	isalpha = 0 ;
-	if (letter >= 'A' && letter <= 'Z') 
-		isalpha = 1;
-	if (letter >= 'a' && letter <= 'z')
+	if ((letter >= 'A' && letter <= 'Z') || \
+	(letter >= 'a' && letter <= 'z'))
 		isalpha = 1;
 	return (isalpha);
 }
