@@ -28,12 +28,12 @@ int main(void)
 	char to_compare[2]="la";
 	char nums[]="-564654";
 	char phrasestrcpy[16];
-	char letter='a';
-	void *dst;
+	int letter='a';
+	char *dst;
 	void *src;
 	ft_size_t num = 5 ;
 
-	printf("%lu\n",ft_strlen(to_find));
+	printf(GRN"\n-------------TEST IS-------------\n"reset);
 	test_isalnum(letters);
 	test_isalpha(letters);
 	test_isascii(letters);
@@ -41,15 +41,19 @@ int main(void)
 	test_isprint(letters);
 	test_tolower(letters);
 	test_toupper(letters);
+
+	printf(GRN"\n\n-------------TEST STR-------------"reset);
 	test_strlen(str);
 	test_strcat(phrase2, phrase1);
 	test_strlcpy(phrase2, phrase1);
 	test_strncmp(phrase1,phrase3, num);
 	test_strnstr(str, to_find, num);
-	test_atoi(nums);
 	test_strchr(str, letter);
 	test_strrchr(str, letter);
 	test_strdup(to_find);
+	test_atoi(nums);
+
+	printf(GRN"\n-------------TEST MEM-------------"reset);
 	test_memcpy(phrasestrcpy, str, num);
 	test_memchr(str, letter, num);
 	test_memcmp(to_find, to_compare, num);
