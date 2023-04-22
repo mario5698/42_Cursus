@@ -24,8 +24,8 @@ int main(void)
 	char phrase2[10]={'h','o','l','a',' '};
 	char phrase3[6]={'a','d','i','o','s'};
 	char str[]="hol a que tal \0";
-	char to_find[]="la";
-	char to_compare[]="la";
+	char to_find[2]="la";
+	char to_compare[2]="la";
 	char nums[]="-564654";
 	char phrasestrcpy[16];
 	char letter='a';
@@ -33,6 +33,7 @@ int main(void)
 	void *src;
 	ft_size_t num = 5 ;
 
+	printf("%lu\n",ft_strlen(to_find));
 	test_isalnum(letters);
 	test_isalpha(letters);
 	test_isascii(letters);
