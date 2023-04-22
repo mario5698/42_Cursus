@@ -53,6 +53,7 @@ int main(void)
 	test_memcpy(phrasestrcpy, str, num);
 	test_memchr(str, letter, num);
 	test_memcmp(to_find, to_compare, num);
+	//test_calloc(num, num);
 	test_memset(dst, letter, num);
 	return(0);
 }

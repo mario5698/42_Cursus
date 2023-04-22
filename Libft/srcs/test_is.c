@@ -26,7 +26,7 @@ void	test_isalnum(int *letters)
 	printf(CYN"\nTEST ISALNUM"reset);
 	while (letters[i] != '\0')
 	{
-		printf("\nCharacter Test %c", letters[i]);
+		printf("\nCharacter Test: %c" , letters[i]);
 		check(letters[i], &ft_isalnum, &isalnum);
 		i++;
 	}

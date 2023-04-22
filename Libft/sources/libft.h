@@ -21,5 +21,5 @@ void 		*ft_memcpy(void *restrict dest, const void *restrict src, ft_size_t n);
 void		*ft_memset(void *s, int c, ft_size_t n);
 void	 	*ft_memchr(const void *s, int c, ft_size_t n);
 int			ft_memcmp(const void *s1, const void *s2, ft_size_t n);
-
+void		*ft_calloc(ft_size_t count, ft_size_t size);
 #endif

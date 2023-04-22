@@ -11,32 +11,32 @@
 /* ************************************************************************** */
 
 #include "../sources/libft.h"
-
-void *calloc (ft_size_t count, ft_size_t size)
+/*
+void	*ft_calloc(ft_size_t count, ft_size_t size)
 {
 	ft_size_t	nb;
-	int			i;
-	int			j;
+	ft_size_t			i;
+	ft_size_t			j;
 	char 		matrix[count][count];
 	char 		*local;
 	
 	i = 0;
 	j = 0;
-	//matrix = (char **) malloc (count);
-	//matrix = (char *) malloc (count);
+	local = *matrix;
+	//matrix = (char **) malloc (count *sizeof(ft_size_t));
+	//matrix = (char *) malloc (count *sizeof(ft_size_t));
 	
 	while(i<count)
 	{
-		j+0;
-		while(j<count)
+		j=0;
+		while(j < count)
 		{
-			matrix[i][j]='0';
+			matrix[i][j] = '0';
 			j++;
 		}
 		i++;
 	}
-
 	nb = 0;
-	
-	return	(count);
+	return	(local);
 }
+*/

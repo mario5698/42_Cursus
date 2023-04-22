@@ -22,5 +22,5 @@ void	test_memcpy(void *restrict dest, const void *restrict src, ft_size_t n);
 void 	test_memset(void *s, int c, ft_size_t n);
 void 	test_memchr(const void *s, int c, ft_size_t n);
 void	test_memcmp(const void *s1, const void *s2, ft_size_t n);
-
+void	test_calloc(ft_size_t count, ft_size_t size);
 #endif
