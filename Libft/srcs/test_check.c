@@ -18,18 +18,18 @@
 #include "../sources/color.h"
 #include "../sources/test.h"
 
-void	check(int c, int (*f)(int))
+void	check(int c, int (*f)(int), int (*h)(int))
 {
-	if (f(c))
-		printf(GRN"\nCheck OK [✓]"reset);
+	if (f(c) == h(c))
+		printf(GRN" OK [✓]"reset);
 	else
-		printf(RED"\nCheck KO [X]"reset);
+		printf(RED" KO [X]"reset);
 }
 
 void	check_comparations(int c)
 {
 	if (c)
-		printf(GRN"\nCheck OK [✓]"reset);
+		printf(GRN" OK [✓]"reset);
 	else
-		printf(RED"\nCheck KO [X]"reset);
+		printf(RED" KO [X]"reset);
 }

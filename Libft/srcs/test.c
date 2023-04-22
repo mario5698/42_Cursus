@@ -26,9 +26,8 @@ void	test_tolower(int *letters)
 	printf(CYN"\n\nTEST TOLOWER"reset);
 	while (letters[i] != '\0')
 	{
-		printf("\nCharacter Test %c", letters[i]);
-		check(letters[i], &ft_tolower);
-		check(letters[i], &tolower);
+		printf("\nCharacter Test %c ", letters[i]);
+		check(letters[i], &ft_tolower, &tolower);
 		i++;
 	}
 }
@@ -38,22 +37,21 @@ void	test_toupper(int *letters)
 	int	i;
 
 	i = 0;
-	printf(CYN"\n\nTEST ISALNUM"reset);
+	printf(CYN"\n\nTEST TOUPPER"reset);
 	while (letters[i] != '\0')
 	{
-		printf("\nCharacter Test %c", letters[i]);
-		check(letters[i], &ft_toupper);
-		check(letters[i], &toupper);
+		printf("\nCharacter Test %c ", letters[i]);
+		check(letters[i], &ft_toupper, &toupper);
 		i++;
 	}
 }
 
 void	test_atoi(char *str)
 {
-	printf(CYN"\n\nTEST ATOI\n"reset);
-	printf("Comparation\n%d -> %d", ft_atoi(str), atoi(str));
+	printf(CYN"\nTEST ATOI "reset);
 	if (ft_atoi(str) == atoi(str))
 		check_comparations(1);
 	else
 		check_comparations(0);
+	printf("\nComparation %d -> %d\n", ft_atoi(str), atoi(str));
 }

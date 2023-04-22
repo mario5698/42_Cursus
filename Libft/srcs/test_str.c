@@ -20,86 +20,86 @@
 
 void	test_strlen(const char *s)
 {
-	printf(CYN"\n\nTEST STRLEN\n"reset);
-	printf("\nPhrase Test: %s", s);
-	printf("\nlenght %lu %lu ",ft_strlen(s), strlen(s));
+	printf(CYN"\n\nTEST STRLEN"reset);
 	if ( ft_strlen(s) ==  strlen(s))
 		check_comparations(1);
 	else
 		check_comparations(0);
+	printf("\nPhrase Test: %s\n", s);
+	printf("lenght %lu %lu \n",ft_strlen(s), strlen(s));
 }
 
 void	test_strcat(char *s1, char *s2)
 {
-	printf(CYN"\n\nTEST STRCAT\n"reset);
-	printf("Comparation\n%s\n%s", ft_strcat(s1, s2), strcat(s1, s2));
+	printf(CYN"\nTEST STRCAT"reset);
 	if (ft_strcat(s1, s2) == strcat (s1, s2))
 		check_comparations(1);
 	else
 		check_comparations(0);
+	printf("\nComparation: %s -> %s\n", ft_strcat(s1, s2), strcat(s1, s2));
 }
 
 void	test_strlcpy(char *dest, char *src)
 {
-	printf(CYN"\n\nTEST STRLCPY\n"reset);
-	printf("Comparation\n%s -> %s", ft_strcpy(dest, src),
-		strcpy(dest, src));
+	printf(CYN"\nTEST STRLCPY"reset);
 	if (ft_strcpy(dest, src) == strcpy(dest, src))
 		check_comparations(1);
 	else
 		check_comparations(0);
+	printf("\nComparation: %s -> %s\n", ft_strcpy(dest, src),
+		strcpy(dest, src));
 }
 
 void	test_strncmp(char *s1, char *s2, size_t n)
 {
-	printf(CYN"\n\nTEST STRNCMP\n"reset);
-	printf("Comparation\n%d -> %d", ft_strncmp(s1, s2, n), strncmp(s1, s2, n));
+	printf(CYN"\nTEST STRNCMP"reset);
 	if (ft_strncmp(s1, s2, n) == strncmp(s1, s2, n))
 		check_comparations(1);
 	else
 		check_comparations(0);
+	printf("\nComparation: %d -> %d\n", ft_strncmp(s1, s2, n), strncmp(s1, s2, n));
 }
 
 void	test_strnstr(char *str, char *to_find, unsigned int nb)
 {
-	printf(CYN"\n\nTEST STRNSTR\n"reset);
-	printf("Comparation\n%s -> %s", ft_strnstr(str, to_find, nb),
-		strnstr(str, to_find, nb));
+	printf(CYN"\nTEST STRNSTR "reset);
 	if (ft_strnstr(str, to_find, nb) == strnstr(str, to_find, nb))
 		check_comparations(1);
 	else
 		check_comparations(0);
+	printf("\nComparation: %s -> %s\n", ft_strnstr(str, to_find, nb),
+		strnstr(str, to_find, nb));
 }
 
 void test_strchr(const char *str, int to_find)
 {
-	printf(CYN"\n\nTEST STRRCHR\n"reset);
-	printf("Comparation\n%s -> %s", ft_strchr(str, to_find),
-		strchr(str, to_find));
+	printf(CYN"\nTEST STRRCHR"reset);
 	if (ft_strchr(str, to_find) == strchr(str, to_find))
 		check_comparations(1);
 	else
 		check_comparations(0);
+	printf("\nComparation: %s -> %s\n", ft_strchr(str, to_find),
+		strchr(str, to_find));
 }
 
 void test_strrchr(const char *str, int to_find)
 {
-	printf(CYN"\n\nTEST STRCHR\n"reset);
-	printf("Comparation\n%s -> %s", ft_strrchr(str, to_find),
-		strrchr(str, to_find));
+	printf(CYN"\nTEST STRCHR"reset);
 	if (ft_strrchr(str, to_find) == strrchr(str, to_find))
 		check_comparations(1);
 	else
 		check_comparations(0);
+	printf("\nComparation: %s -> %s\n", ft_strrchr(str, to_find),
+		strrchr(str, to_find));
 }
 
 void	test_strdup(const char *src)
 {
-	printf(CYN"\n\nTEST STRDUP\n"reset);
-	printf("Comparation\n%s -> %s", ft_strdup(src),
-		strdup(src));
+	printf(CYN"\nTEST STRDUP "reset);
 	if (*ft_strdup(src) == *strdup(src))
 		check_comparations(1);
 	else
 		check_comparations(0);
+	printf("\nComparation: %s -> %s", ft_strdup(src),
+		strdup(src));
 }

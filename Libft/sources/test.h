@@ -1,6 +1,6 @@
 #ifndef TEST_H
 # define TEST_H
-void 	check(int c, int(*f)(int));
+void 	check(int c, int(*f)(int), int(*h)(int));
 void	check_comparations(int c);
 void 	test_isalnum(int *letters);
 void	test_strlen(const char *s);

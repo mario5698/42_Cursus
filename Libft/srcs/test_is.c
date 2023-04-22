@@ -23,12 +23,11 @@ void	test_isalnum(int *letters)
 	int	i;
 
 	i = 0;
-	printf(CYN"\n\nTEST ISALNUM"reset);
+	printf(CYN"\nTEST ISALNUM"reset);
 	while (letters[i] != '\0')
 	{
 		printf("\nCharacter Test %c", letters[i]);
-		check(letters[i], &ft_isalnum);
-		check(letters[i], &isalnum);
+		check(letters[i], &ft_isalnum, &isalnum);
 		i++;
 	}
 }
@@ -42,8 +41,7 @@ void	test_isalpha(int *letters)
 	while (letters[i] != '\0')
 	{
 		printf("\nCharacter Test %c", letters[i]);
-		check(letters[i], &ft_isalpha);
-		check(letters[i], &isalpha);
+		check(letters[i], &ft_isalpha, &isalpha);
 		i++;
 	}
 }
@@ -57,8 +55,7 @@ void	test_isascii(int *letters)
 	while (letters[i] != '\0')
 	{
 		printf("\nCharacter Test %c", letters[i]);
-		check(letters[i], &ft_isascii);
-		check(letters[i], &isascii);
+		check(letters[i], &ft_isascii, &isascii);
 		i++;
 	}
 }
@@ -72,8 +69,7 @@ void	test_isdigit(int *letters)
 	while (letters[i] != '\0')
 	{
 		printf("\nCharacter Test %c", letters[i]);
-		check(letters[i], &ft_isdigit);
-		check(letters[i], &isdigit);
+		check(letters[i], &ft_isdigit, &isdigit);
 		i++;
 	}
 }
@@ -87,8 +83,7 @@ void	test_isprint(int *letters)
 	while (letters[i] != '\0')
 	{
 		printf("\nCharacter Test %c", letters[i]);
-		check(letters[i], &ft_isprint);
-		check(letters[i], &isprint);
+		check(letters[i], &ft_isprint, &isprint);
 		i++;
 	}
 }
