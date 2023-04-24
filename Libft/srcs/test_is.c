@@ -16,7 +16,6 @@
 #include <string.h>
 #include "../sources/libft.h"
 #include "../sources/color.h"
-#include "../sources/test.h"
 
 void	test_funcions(int *letters,int (*f)(int), int (*h)(int), char *namefunction)
 {
@@ -25,13 +24,9 @@ void	test_funcions(int *letters,int (*f)(int), int (*h)(int), char *namefunction
 
 	i = 0;
 	printf(CYN"\nTEST %s"reset, namefunction);
-
 	equal = check_previus(letters, f, h);
-
 	if(equal)
-	{
 		check_comparations(equal);
-	}
 	else
 	{
 		check_comparations(equal);
