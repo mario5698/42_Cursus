@@ -12,6 +12,8 @@
 
 #include <stdio.h>
 #include <ctype.h>
+#include <stdlib.h>
+#include <string.h>
 #include "sources/libft.h"
 #include "sources/color.h"
 #include "sources/test.h"
@@ -34,20 +36,28 @@ int main(void)
 	ft_size_t num = 5 ;
 	
 	printf(GRN"\n-------------TEST IS-------------\n"reset);
-	test_isalnum(letters);
-	test_isalpha(letters);
-	test_isascii(letters);
-	test_isdigit(letters);
-	test_isprint(letters);
-	test_tolower(letters);
-	test_toupper(letters);
+	
+	test_funcions(letters, &ft_isascii, &isascii, "ISASCII");
+	test_funcions(letters, &ft_isalpha, &isalpha, "ISALPHA");
+	test_funcions(letters, &ft_isalnum, &isalnum, "ISALNUM");
+	test_funcions(letters, &ft_isdigit, &isdigit, "ISDIGIT");
+	test_funcions(letters, &ft_isprint, &isprint, "ISPRINT");
+	test_funcions(letters, &ft_tolower, &tolower, "TOLOWER");
+	test_funcions(letters, &ft_toupper, &toupper, "TOUPPER");
 
 	printf(GRN"\n\n-------------TEST STR-------------"reset);
 	test_strlen(str);
+	//test_str(phrase2, phrase1, &ft_strcat, &strcat, "STRCAT");
+	//test_str(phrase2, phrase1, &ft_strcpy, &strcpy,"STRCPY");
+
+	
 	test_strcat(phrase2, phrase1);
 	test_strlcpy(phrase2, phrase1);
+	
 	test_strncmp(phrase1,phrase3, num);
 	test_strnstr(str, to_find, num);
+	//test_strchr(str, letter, &ft_strchr, &strchr, "STRCHR");
+	//test_strchr(str, letter, &ft_strrchr, &strrchr, "STRRCHR");
 	test_strchr(str, letter);
 	test_strrchr(str, letter);
 	test_strdup(to_find);

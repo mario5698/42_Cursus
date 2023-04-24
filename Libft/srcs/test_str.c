@@ -29,6 +29,27 @@ void	test_strlen(const char *s)
 	printf("lenght %lu %lu \n",ft_strlen(s), strlen(s));
 }
 
+void	test_str(char *s1, char *s2, char * (*f)(char *, char *), char * (*h)(char *, char *), char *name)
+{
+	printf(CYN"\nTEST %s"reset, name);
+	if ( f(s1, s2) == h(s1, s2))
+		check_comparations(1);
+	else
+		check_comparations(0);
+	printf("\nComparation: %s -> %s\n", ft_strcat(s1, s2), strcat(s1, s2));
+}
+
+/*void	test_strchr(char *s1, int s2, int (*f)(const char *, int), int (*h)(const char *, int), char *name)
+{
+	printf(CYN"\nTEST %s"reset, name);
+	if ( f(s1, s2) == h(s1, s2))
+		check_comparations(1);
+	else
+		check_comparations(0);
+	printf("\nComparation: %d -> %d\n", f(s1, s2), h(s1, s2));
+}*/
+
+
 void	test_strcat(char *s1, char *s2)
 {
 	printf(CYN"\nTEST STRCAT"reset);
@@ -73,7 +94,7 @@ void	test_strnstr(char *str, char *to_find, unsigned int nb)
 
 void test_strchr(const char *str, int to_find)
 {
-	printf(CYN"\nTEST STRRCHR"reset);
+	printf(CYN"\nTEST STRCHR"reset);
 	if (ft_strchr(str, to_find) == strchr(str, to_find))
 		check_comparations(1);
 	else

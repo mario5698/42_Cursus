@@ -18,72 +18,29 @@
 #include "../sources/color.h"
 #include "../sources/test.h"
 
-void	test_isalnum(int *letters)
+void	test_funcions(int *letters,int (*f)(int), int (*h)(int), char *namefunction)
 {
 	int	i;
+	int equal;
 
 	i = 0;
-	printf(CYN"\nTEST ISALNUM"reset);
-	while (letters[i] != '\0')
+	printf(CYN"\n\nTEST %s"reset, namefunction);
+
+	equal = check_previus(letters, f, h);
+
+	if(equal)
 	{
-		printf("\nCharacter Test: %c" , letters[i]);
-		check(letters[i], &ft_isalnum, &isalnum);
-		i++;
+		check_comparations(equal);
+	}
+	else
+	{
+		check_comparations(equal);
+		while (letters[i] != '\0')
+		{
+			printf("\nCharacter Test %c", letters[i]);
+			check(letters[i], f, h);
+			i++;
+		}
 	}
 }
 
-void	test_isalpha(int *letters)
-{
-	int	i;
-
-	i = 0;
-	printf(CYN"\n\nTEST ISALPHA"reset);
-	while (letters[i] != '\0')
-	{
-		printf("\nCharacter Test %c", letters[i]);
-		check(letters[i], &ft_isalpha, &isalpha);
-		i++;
-	}
-}
-
-void	test_isascii(int *letters)
-{
-	int	i;
-
-	i = 0;
-	printf(CYN"\n\nTEST ISASCII"reset);
-	while (letters[i] != '\0')
-	{
-		printf("\nCharacter Test %c", letters[i]);
-		check(letters[i], &ft_isascii, &isascii);
-		i++;
-	}
-}
-
-void	test_isdigit(int *letters)
-{
-	int	i;
-
-	i = 0;
-	printf(CYN"\n\nTEST ISDIGIT"reset);
-	while (letters[i] != '\0')
-	{
-		printf("\nCharacter Test %c", letters[i]);
-		check(letters[i], &ft_isdigit, &isdigit);
-		i++;
-	}
-}
-
-void	test_isprint(int *letters)
-{
-	int	i;
-
-	i = 0;
-	printf(CYN"\n\nTEST ISPRINT"reset);
-	while (letters[i] != '\0')
-	{
-		printf("\nCharacter Test %c", letters[i]);
-		check(letters[i], &ft_isprint, &isprint);
-		i++;
-	}
-}
