@@ -32,7 +32,7 @@ int main(void)
 	char *dst;
 	void *src;
 	ft_size_t num = 5 ;
-
+	
 	printf(GRN"\n-------------TEST IS-------------\n"reset);
 	test_isalnum(letters);
 	test_isalpha(letters);
@@ -57,7 +57,11 @@ int main(void)
 	test_memcpy(phrasestrcpy, str, num);
 	test_memchr(str, letter, num);
 	test_memcmp(to_find, to_compare, num);
-	//test_calloc(num, num);
-	test_memset(dst, letter, num);
+	test_memset(phrasestrcpy, letter, num);
+	test_memmove (phrasestrcpy,phrase1, num);
+	test_calloc(num, num);
+
+
+	printf("\n\n");
 	return(0);
 }

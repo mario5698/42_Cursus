@@ -23,4 +23,5 @@ void 	test_memset(void *s, int c, ft_size_t n);
 void 	test_memchr(const void *s, int c, ft_size_t n);
 void	test_memcmp(const void *s1, const void *s2, ft_size_t n);
 void	test_calloc(ft_size_t count, ft_size_t size);
+void 	test_memmove (void *dest, void *src, ft_size_t n);
 #endif
