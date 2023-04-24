@@ -24,7 +24,7 @@ void	test_funcions(int *letters,int (*f)(int), int (*h)(int), char *namefunction
 	int equal;
 
 	i = 0;
-	printf(CYN"\n\nTEST %s"reset, namefunction);
+	printf(CYN"\nTEST %s"reset, namefunction);
 
 	equal = check_previus(letters, f, h);
 
