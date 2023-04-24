@@ -47,17 +47,10 @@ int main(void)
 
 	printf(GRN"\n\n-------------TEST STR-------------"reset);
 	test_strlen(str);
-	//test_str(phrase2, phrase1, &ft_strcat, &strcat, "STRCAT");
-	//test_str(phrase2, phrase1, &ft_strcpy, &strcpy,"STRCPY");
-
-	
 	test_strcat(phrase2, phrase1);
 	test_strlcpy(phrase2, phrase1);
-	
 	test_strncmp(phrase1,phrase3, num);
 	test_strnstr(str, to_find, num);
-	//test_strchr(str, letter, &ft_strchr, &strchr, "STRCHR");
-	//test_strchr(str, letter, &ft_strrchr, &strrchr, "STRRCHR");
 	test_strchr(str, letter);
 	test_strrchr(str, letter);
 	test_strdup(to_find);
@@ -70,8 +63,6 @@ int main(void)
 	test_memset(phrasestrcpy, letter, num);
 	test_memmove (phrasestrcpy,phrase1, num);
 	test_calloc(num, num);
-
-
 	printf("\n\n");
 	return(0);
 }
