@@ -16,6 +16,7 @@
 #include <string.h>
 #include "../sources/libft.h"
 #include "../sources/color.h"
+#include "../sources/test.h"
 
 void	test_funcions(int *letters,int (*f)(int), int (*h)(int), char *namefunction)
 {
