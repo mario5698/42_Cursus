@@ -4,13 +4,12 @@
 char *ft_substr(char const *s, unsigned int start , ft_size_t len )
 {	
 	char *local;
-	int length;
 	int i ;
 
 	i = 0;
-	length = start - len;;
 	local= (char *) malloc (sizeof(char) * (len + 1));
-
+	if(sizeof(local) == '\0')
+		return(NULL);
 	while(start<len)
 	{
 		local[i] = s[start];

@@ -118,12 +118,12 @@ void	test_strdup(const char *src)
 void	test_substr(char const *s, unsigned int start , ft_size_t len)
 {
 	printf(CYN"\nTEST SUBSTR "reset);
-	printf("\nComparation: %s ", ft_substr(s, start, len));
+	printf("\nParameters : %s %d %lu", s, start, len);
 
 	if (sizeof(ft_substr(s, start, len)>0))
 		check_comparations(1);
 	else
 		check_comparations(0);
 	
-	printf("\nComparation: %s ", ft_substr(s, start, len));
+	printf("\nComparation: %s", ft_substr(s, start, len));
 }
