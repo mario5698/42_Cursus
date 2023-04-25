@@ -36,8 +36,7 @@ int main(void)
 	ft_size_t num = 5 ;
 	
 	printf(GRN"\n-------------TEST IS-------------\n"reset);
-	
-	test_funcions(letters, &ft_isascii, &isascii, "ISASCII");
+	test_funcions(letters, &ft_isascii, &isalpha, "ISASCII");
 	test_funcions(letters, &ft_isalpha, &isalpha, "ISALPHA");
 	test_funcions(letters, &ft_isalnum, &isalnum, "ISALNUM");
 	test_funcions(letters, &ft_isdigit, &isdigit, "ISDIGIT");
