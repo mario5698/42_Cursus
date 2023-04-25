@@ -23,5 +23,5 @@ void	 	*ft_memchr(const void *s, int c, ft_size_t n);
 int			ft_memcmp(const void *s1, const void *s2, ft_size_t n);
 void		*ft_calloc(ft_size_t count, ft_size_t size);
 void		*ft_memmove(void *dest, const void *src, ft_size_t n);
-
+char		*ft_substr(char const *s, unsigned int start , ft_size_t len);
 #endif

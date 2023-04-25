@@ -62,6 +62,8 @@ int main(void)
 	test_memset(phrasestrcpy, letter, num);
 	test_memmove (phrasestrcpy,phrase1, num);
 	test_calloc(num, num);
+	test_substr(str, 4, 9);
+
 	printf("\n\n");
 	return(0);
 }
