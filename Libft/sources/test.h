@@ -29,5 +29,6 @@ void	test_calloc(ft_size_t count, ft_size_t size);
 void 	test_memmove (void *dest, void *src, ft_size_t n);
 void	test_funcions(int *letters,int (*f)(int), int (*h)(int), char *name);
 void	test_substr(char const *s, unsigned int start , ft_size_t len);
+void	test_strjoin(char const *s1, char const *s2);
 
 #endif

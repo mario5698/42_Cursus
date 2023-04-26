@@ -22,7 +22,7 @@ void	test_funcions(int *letters,int (*f)(int), int (*h)(int), char *namefunction
 {
 	int	i;
 	int equal;
-
+	
 	i = 0;
 	printf(CYN"\nTEST %s"reset, namefunction);
 	equal = check_previus(letters, f, h);

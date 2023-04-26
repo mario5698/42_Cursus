@@ -127,3 +127,13 @@ void	test_substr(char const *s, unsigned int start , ft_size_t len)
 	
 	printf("\nComparation: %s", ft_substr(s, start, len));
 }
+
+void	test_strjoin(char const *s1, char const *s2)
+{
+	printf(CYN"\nTEST STRJOIN"reset);
+	if (sizeof(ft_strjoin(s1, s2))>0)
+		check_comparations(1);
+	else
+		check_comparations(0);
+	printf("\nComparation: %s",ft_strjoin(s1, s2));
+}
