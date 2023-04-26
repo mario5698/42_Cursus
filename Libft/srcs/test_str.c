@@ -140,10 +140,40 @@ void	test_strjoin(char const *s1, char const *s2)
 
 void test_strtrim(char const *s1, char const *set)
 {
+	printf(RED"\nPENDIENTE ARREGLO"reset);
+
 	printf(CYN"\nTEST STRTRIM"reset);
 	if (sizeof(ft_strtrim(s1, set))>0)
 		check_comparations(1);
 	else
 		check_comparations(0);
 	printf("\nComparation: %s",ft_strtrim(s1, set));
+}
+
+
+void test_split(char const *s, char c)
+{
+	printf(CYN"\nTEST SPLIT"reset);
+	ft_split(s, c);
+	/*
+	int i;
+	int j;
+	char **local;
+
+	local= 
+	i=0;
+	j=0;
+	if (sizeof(ft_split(s, c))>0)
+		check_comparations(1);
+	else
+		check_comparations(0);
+	while(*local[i]!='\0')
+	{
+		while(local[i][j]!='\0')
+		{
+			printf("%c", local[i][j]);
+			j++;
+		}
+		i++;
+	}*/
 }

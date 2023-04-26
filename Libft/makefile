@@ -7,7 +7,7 @@ srcs/ft_toupper.o srcs/test.o srcs/ft_strlen.o srcs/test_check.o \
 srcs/test_is.o srcs/test_str.o srcs/ft_strchr.o srcs/ft_strrchr.o \
 srcs/ft_substr.o srcs/ft_strdup.o srcs/ft_memcpy.o srcs/test_mem.o srcs/ft_memset.o \
 srcs/ft_memchr.o srcs/ft_memcmp.o srcs/ft_calloc.o srcs/ft_memmove.o srcs/ft_strjoin.o\
-srcs/ft_strtrim.o
+srcs/ft_strtrim.o srcs/ft_split.o
 CFLAGS = -Wall -Werror -Wextra
 
 ${NAME}: ${OBJECTS}
