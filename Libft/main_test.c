@@ -25,7 +25,7 @@ int main(void)
 	char phrase1[6]={'a','d','i','o','s'};
 	char phrase2[10]={'h','o','l','a',' '};
 	char phrase3[6]={'a','d','i','o','s'};
-	char str[]="hola que tal\0";
+	char str[]="hola que ho tal hola\0";
 	char to_find[2]="la";
 	char to_compare[2]="la";
 	char nums[]="-564654";
@@ -55,6 +55,7 @@ int main(void)
 	test_strrchr(str, letter);
 	test_strdup(to_find);
 	test_atoi(nums);
+	test_strtrim(str, "hola");
 
 	printf(GRN"\n-------------TEST MEM-------------"reset);
 	test_memcpy(phrasestrcpy, str, num);

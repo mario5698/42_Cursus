@@ -137,3 +137,13 @@ void	test_strjoin(char const *s1, char const *s2)
 		check_comparations(0);
 	printf("\nComparation: %s",ft_strjoin(s1, s2));
 }
+
+void test_strtrim(char const *s1, char const *set)
+{
+	printf(CYN"\nTEST STRTRIM"reset);
+	if (sizeof(ft_strtrim(s1, set))>0)
+		check_comparations(1);
+	else
+		check_comparations(0);
+	printf("\nComparation: %s",ft_strtrim(s1, set));
+}
