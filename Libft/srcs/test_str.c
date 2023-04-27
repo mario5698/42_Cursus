@@ -156,7 +156,7 @@ void test_split(char const *s, char c)
 	printf(CYN"\nTEST SPLIT"reset);
 	char **local;
 	int i, j;
-
+	printf("%s",s );
 	i = 0;
 	j = 0;
 	local = ft_split(s,c);
@@ -164,7 +164,7 @@ void test_split(char const *s, char c)
 		check_comparations(1);
 	else
 		check_comparations(0);
-	while(i<4)
+	while(*(local+i)!=NULL)
 	{
 		printf("\n%d ->", i);
 		j=0;

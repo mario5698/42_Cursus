@@ -38,14 +38,15 @@ char **ft_split(char const *s, char c)
 	position=0;
 	if(sizeof(s)=='\0')
 		return(NULL);
-	local = (char **)malloc(sizeof(char **)*ft_strlen(s));
+	local = (char **)malloc(sizeof(char *)*ft_strlen(s));
 	counter = counter_char(s, c);
-	while(i < counter+1)
+	while(i <= counter)
 	{
 		position = nextc(s, c, lastposition);
 		*(local+i)= ft_substr(s, lastposition, position);
 		lastposition = position+1;
 		i++;
 	}
+	*(local+i)=NULL;
 	return(local);
 }
