@@ -153,14 +153,28 @@ void test_strtrim(char const *s1, char const *set)
 
 void test_split(char const *s, char c)
 {
-
 	printf(CYN"\nTEST SPLIT"reset);
-	
+	char **local;
+	int i, j;
 
-	ft_split(s, c);
+	i = 0;
+	j = 0;
+	local = ft_split(s,c);
 	if (sizeof(ft_split(s, c))>0)
 		check_comparations(1);
 	else
 		check_comparations(0);
+	while(i<4)
+	{
+		printf("\n%d ->", i);
+		j=0;
+		while (local[i][j])
+		{
+			printf("%c",local[i][j]);
+			j++;
+		}
+		i++;
+	}
+
 	
 }
