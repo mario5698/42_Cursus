@@ -25,7 +25,7 @@ int main(void)
 	char phrase1[6]={'a','d','i','o','s'};
 	char phrase2[10]={'h','o','l','a',' '};
 	char phrase3[6]={'a','d','i','o','s'};
-	char str[]="hola que ho tal hola";
+	char str[]="hola que ho tal hola   !!      ";
 	char to_find[2]="la";
 	char to_compare[2]="la";
 	char nums[]="-564654";
