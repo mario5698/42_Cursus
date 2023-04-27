@@ -65,7 +65,8 @@ int main(void)
 	test_calloc(num, num);
 	test_substr(str, 0, 12);
 	test_strjoin(str, ",");*/
-	test_split(str, ' ');
+	test_split(str, 'a');
+	test_itoa(42);
 	printf("\n\n");
 	return(0);
 }

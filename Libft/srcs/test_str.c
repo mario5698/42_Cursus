@@ -175,6 +175,10 @@ void test_split(char const *s, char c)
 		}
 		i++;
 	}
+}
 
-	
+
+void test_itoa(int c)
+{
+	ft_itoa(c);
 }

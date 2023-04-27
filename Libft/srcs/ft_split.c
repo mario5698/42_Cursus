@@ -32,7 +32,7 @@ char **ft_split(char const *s, char c)
 	int lastposition;
 	int i;
 	int counter; 
-	//usar substr para alocar los separadores
+	
 	i = 0;
 	lastposition=0;
 	position=0;
