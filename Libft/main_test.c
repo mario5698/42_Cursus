@@ -65,7 +65,7 @@ int main(void)
 	test_calloc(num, num);
 	test_substr(str, 0, 12);
 	test_strjoin(str, ",");
-	test_split(str, 'a');
+	test_split(str, ' ');
 	//test_itoa(42);
 	printf("\n \033[31;1;4m buen dia \033[0m");
 	return(0);
