@@ -15,13 +15,16 @@ ${NAME}: ${OBJECTS}
 
 all: ${NAME}
 
+#color
+NO_COLOR= \033[2K
+RED =  \e[0;31m
 %.o : %.c
-	gcc  -c ${CFLAGS} $< -o $@
-
+	@printf "${RED}\r Compiling -> $@"
+	@gcc -c   ${CFLAGS} $< -o $@
 fclean: clean
 	rm -f ${NAME}
 
 clean:
-	rm -f ${OBJECTS}
+	@rm -f ${OBJECTS}
 
 re: fclean all%

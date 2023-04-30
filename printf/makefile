@@ -13,6 +13,7 @@ ${NAME}: ${OBJECTS}
 
 %.o : %.c
 	gcc  -c ${CFLAGS} $< -o $@
+#printf("${no_c}\r Compailing $@")
 
 fclean: clean
 	rm -f ${NAME}

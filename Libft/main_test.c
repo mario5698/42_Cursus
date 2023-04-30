@@ -36,7 +36,7 @@ int main(void)
 	void *src;
 	ft_size_t num = 5 ;
 	
-	/*printf(GRN"\n-------------TEST IS-------------\n"reset);
+	printf(GRN"\n-------------TEST IS-------------\n"reset);
 	test_funcions(letters, &ft_isascii, &isascii, "ISASCII");
 	test_funcions(letters, &ft_isalpha, &isalpha, "ISALPHA");
 	test_funcions(letters, &ft_isalnum, &isalnum, "ISALNUM");
@@ -62,11 +62,11 @@ int main(void)
 	test_memchr(str, letter, num);
 	test_memcmp(to_find, to_compare, num);
 	test_memset(phrasestrcpy, letter, num);
-*/	test_memmove (&phrase1[0],&phrase1[2],6);
-/*	test_calloc(num, num);
+	test_memmove (&phrase1[0],&phrase1[2],6);
+	test_calloc(num, num);
 	test_substr(str, 0, 12);
-	test_strjoin(str, ",");*/
-	test_split(str, ' ');
+	test_strjoin(str, ",");
+	//test_split(str, ' ');
 	printf("\n");
 	//test_itoa(42);
 	return(0);

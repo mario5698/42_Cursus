@@ -16,6 +16,8 @@ all: ${NAME}
 
 %.o : %.c
 	gcc  -c ${CFLAGS} $< -o $@
+	@printf"${no_c}\r Compailing $@"
+	@echo"A"
 
 fclean: clean
 	rm -f ${NAME}

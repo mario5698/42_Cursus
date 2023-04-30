@@ -7,7 +7,8 @@
 #define MAG "\e[0;35m"
 #define CYN "\e[0;36m"
 #define WHT "\e[0;37m"
-
+//No color
+#define no_c "\033[2k"
 //Regular bold text
 #define BBLK "\e[1;30m"
 #define BRED "\e[1;31m"
