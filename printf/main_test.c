@@ -7,6 +7,13 @@
 int main(void)
 {
 	printf(YEL"\n\nvariadic functions: \n\n "reset);
-	printf("\n 1+2 = %d\n\n",AddNumbers(2, 1, 2));
+
+	printf("\nAddNumbers: 1+2= %d",AddNumbers(2, 1, 2));
+
+	printf("\nAdd characters: %d\n",AddCharacters(3, 'a','b','c'));
+	
+
+
+
 	return (0);
 }
