@@ -1,5 +1,5 @@
 NAME = libftprintf.a
-OBJECTS =
+OBJECTS = srcs/test.o
 CFLAGS = -Wall -Werror -Wextra
 
 all: make_libs ${NAME}
@@ -7,16 +7,16 @@ all: make_libs ${NAME}
 make_libs: 
 	MAKE -C libft
 
-
 ${NAME}: ${OBJECTS}
 	cp libft/libft.a ${NAME}
-	ar rc ${NAME}  ${OBJECTS}
+	ar rc ${NAME} ${OBJECTS}
 
 %.o : %.c
 	gcc  -c ${CFLAGS} $< -o $@
 
 fclean: clean
 	rm -f ${NAME}
+	rm main_test
 	MAKE -C libft fclean
 
 clean:

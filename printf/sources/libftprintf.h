@@ -1,4 +1,4 @@
 #ifndef LIBFTPRINTF
 # define LIBFTPRINTF
-void printc(char a);
+int AddNumbers(int n, ...);
 #endif
