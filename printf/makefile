@@ -1,5 +1,5 @@
 NAME = libftprintf.a
-OBJECTS = 
+OBJECTS =
 CFLAGS = -Wall -Werror -Wextra
 
 all: make_libs ${NAME}

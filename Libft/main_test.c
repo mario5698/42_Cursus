@@ -6,7 +6,7 @@
 /*   By: marancib <marancib@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/21 13:58:47 by marancib          #+#    #+#             */
-/*   Updated: 2023/04/21 13:58:48 by marancib         ###   ########.fr       */
+/*   Updated: 2023/04/28 17:08:55 by marancib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,8 +62,8 @@ int main(void)
 	test_memchr(str, letter, num);
 	test_memcmp(to_find, to_compare, num);
 	test_memset(phrasestrcpy, letter, num);
-	test_memmove (phrasestrcpy,phrase1, num);
-	test_calloc(num, num);
+*/	test_memmove (&phrase1[0],&phrase1[2],6);
+/*	test_calloc(num, num);
 	test_substr(str, 0, 12);
 	test_strjoin(str, ",");*/
 	test_split(str, ' ');

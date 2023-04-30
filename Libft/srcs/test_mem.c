@@ -67,12 +67,12 @@ void 	test_memcmp(const void *s, const void *c, ft_size_t n)
 void test_memmove(void *dest, void *src, ft_size_t n)
 {
 	printf(CYN"\n\nTEST MEMMOVE "reset);
+	printf("\nComparation: %s -> %s", (char *) ft_memmove(dest, src, n),
+	(char *) memmove(dest, src, n));
 	if (ft_memmove(dest, src, n) == memmove(dest, src, n))
 		check_comparations(1);
 	else
 		check_comparations(0);
-	printf("\nComparation: %s -> %s", (char *) memmove(dest, src, n),
-	(char *) memmove(dest, src, n));
 }
 
 void 	test_calloc(size_t count, size_t size)

@@ -2,7 +2,7 @@
 # define LIBFT_H
 typedef unsigned long ft_size_t;
 int			ft_atoi(char *str);
-int			ft_isalnum(int c);
+extern int			ft_isalnum(int c);
 int			ft_isalpha(int c);
 int			ft_isascii(int c);
 int			ft_isdigit(int c);
