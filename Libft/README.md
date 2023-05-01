@@ -1,13 +1,6 @@
 <h1 align="center">
 	✏️ LIBFT
 </h1>
-<h3 align="center">
-	<a href="#%EF%B8%8F-about">About</a>
-	<span> · </span>
-	<a href="#%EF%B8%8F-usage">Usage</a>
-	<span> · </span>
-	<a href="#-testing">Testing</a>
-</h3>
 
 ---
 
@@ -15,10 +8,9 @@
 
 > _This project is pretty straight forward. You will recode printf. You will mainly learn how to use variadic arguments._
 
-	This project consists of coding a library that contains a simplified version (more
-	information below) of the printf function.
+	This project consists of coding a library 
 
-For more detailed information, look at the [**subject of this project**](https://github.com/Surfi89/42cursus/tree/main/Subject%20PDFs).
+For more detailed information, look at the [**subject of this project**](https://github.com/mario5698/42_Cursus/blob/main/Libft/es.subject.pdf).
 
 
 ## 🛠️ Usage
