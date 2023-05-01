@@ -21,5 +21,5 @@ void	*ft_memset(void *s, int c, ft_size_t n)
 	i = 0;
 	while (i < n)
 		*(local + i++) = c;
-	return(local);
+	return (local);
 }

@@ -46,7 +46,7 @@ void	test_strlcpy(char *dest, char *src, ft_size_t num)
 		check_comparations(1);
 	else
 		check_comparations(0);
-	printf("\nComparation: %lu -> %lu\n", ft_strlcpy(dest, src, num),
+	printf("\nComparation: %lu -> %lu", ft_strlcpy(dest, src, num),
 		strlcpy(dest, src, num));
 }
 
