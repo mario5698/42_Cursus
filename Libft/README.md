@@ -7,5 +7,5 @@
 	<img alt="Number of lines of code" src="https://img.shields.io/tokei/lines/github/mario5698/ft_printf?color=critical" />
 	<img alt="Code language count" src="https://img.shields.io/github/languages/count/mario5698/ft_printf?color=yellow" />
 	<img alt="GitHub top language" src="https://img.shields.io/github/languages/top/mario5698/ft_printf?color=blue" />
-	<img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/mario5698/ft_printf?color=green" />
+	<img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/mario5698/42_Cursus/libft?color=green" />
 </p>
