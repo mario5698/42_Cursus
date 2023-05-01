@@ -29,35 +29,25 @@ void	test_strlen(const char *s)
 	printf("lenght %lu %lu \n",ft_strlen(s), strlen(s));
 }
 
-void	test_str(char *s1, char *s2, char * (*f)(char *, char *), char * (*h)(char *, char *), char *name)
+void	test_strlcat(char *s1, char *s2, ft_size_t num)
 {
-	printf(CYN"\nTEST %s"reset, name);
-	if ( f(s1, s2) == h(s1, s2))
+	printf(CYN"\nTEST STRLCAT"reset);
+	if (ft_strlcat(s1, s2, num) == strlcat(s1, s2, num))
 		check_comparations(1);
 	else
 		check_comparations(0);
-	printf("\nComparation: %s -> %s\n", ft_strcat(s1, s2), strcat(s1, s2));
+	printf("\nComparation: %lu -> %lu\n", ft_strlcat(s1, s2, num), strlcat(s1, s2, num));
 }
 
-void	test_strcat(char *s1, char *s2)
-{
-	printf(CYN"\nTEST STRCAT"reset);
-	if (ft_strcat(s1, s2) == strcat (s1, s2))
-		check_comparations(1);
-	else
-		check_comparations(0);
-	printf("\nComparation: %s -> %s\n", ft_strcat(s1, s2), strcat(s1, s2));
-}
-
-void	test_strlcpy(char *dest, char *src)
+void	test_strlcpy(char *dest, char *src, ft_size_t num)
 {
 	printf(CYN"\nTEST STRLCPY"reset);
-	if (ft_strcpy(dest, src) == strcpy(dest, src))
+	if (ft_strlcpy(dest, src, num) == strlcpy(dest, src, num))
 		check_comparations(1);
 	else
 		check_comparations(0);
-	printf("\nComparation: %s -> %s\n", ft_strcpy(dest, src),
-		strcpy(dest, src));
+	printf("\nComparation: %lu -> %lu\n", ft_strlcpy(dest, src, num),
+		strlcpy(dest, src, num));
 }
 
 void	test_strncmp(char *s1, char *s2, size_t n)

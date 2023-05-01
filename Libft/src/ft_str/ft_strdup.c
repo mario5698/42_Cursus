@@ -10,6 +10,6 @@ const char	*ft_strdup(const char *src)
 	dest = (char *) malloc (lenght+1);
 	if (!dest)
 		return (NULL);
-	ft_strlcpy(dest, src, lenght );
+	ft_strlcpy(dest, (char *)src, lenght );
 	return (dest);
 }

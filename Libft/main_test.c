@@ -43,10 +43,10 @@ int main(void)
 	test_funcions(letters, &ft_isprint, &isprint, "ISPRINT");
 	test_funcions(letters, &ft_tolower, &tolower, "TOLOWER");
 	test_funcions(letters, &ft_toupper, &toupper, "TOUPPER");
-	/*printf(GRN"\n\n-------------TEST STR-------------"reset);
-	test_strlen(str);
-	test_strcat(phrase2, phrase1);
-	test_strlcpy(phrase2, phrase1);
+	printf(GRN"\n\n-------------TEST STR-------------"reset);
+	test_strlcat(phrase2, phrase1, num);
+	test_strlcpy(phrase2, phrase1, num);
+	/*test_strlen(str);
 	test_strncmp(phrase1,phrase3, num);
 	test_strnstr(str, to_find, num);
 	test_strchr(str, letter);

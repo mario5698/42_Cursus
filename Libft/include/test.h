@@ -10,13 +10,12 @@ void	test_isalpha(int *letters);
 void	test_isascii(int *letters);
 void	test_isdigit(int *letters);
 void	test_isprint(int *letters);*/
-void	test_str(char *s1, char *s2, char * (*f)(char *, char *), char * (*h)(char *, char *), char *name);
 //void	test_strchr(char *s1, int s2, int (*f)(const char *, int), int (*h)(const char *, int), char *name);
 void	test_strlen(const char *s);
 void	test_tolower(int *letters);
 void	test_toupper(int *letters);
-void	test_strcat(char *s1, char *s2);
-void 	test_strlcpy(char *dest, char *src);
+void	test_strlcat(char *s1, char *s2, ft_size_t num);
+void 	test_strlcpy(char *dest, char *src, ft_size_t num);
 void 	test_strncmp(char *s1,char *s2, size_t n );
 void	test_strnstr (char *str, char *to_find, unsigned int nb);
 void	test_atoi(char *str);

@@ -10,21 +10,22 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_stlrcat(char *restrict dest, char *restrict src)
-{
-	int	i;
-	int	o;
+#include"libft.h"
 
-	i = 0;
-	o = 0;
-	while (dest[i] != '\0')
-		i++;
-	while (src[o] != '\0')
-	{
-		dest[i] = src[o];
-		i++;
-		o++;
-	}
-	dest[i] = '\0';
-	return (dest);
+ft_size_t	ft_strlcat(char *dest, char *src, unsigned int size)
+{
+	unsigned int	i;
+	unsigned int	j;
+
+	i = -1;
+	while (++i < size && *dest)
+		dest++;
+	if (i == size)
+		return (i + (unsigned int)ft_strlen(src));
+	j = -1;
+	while (src[++j])
+		if (j < size - i - 1)
+			*dest++ = src[j];
+	*dest = '\0';
+	return (i + j);
 }
