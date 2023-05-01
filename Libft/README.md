@@ -1,1 +1,3 @@
-<h1 aling="center">	✏️ LIBFT</h1>
+<h1 align="center">
+	✏️ LIBFT
+</h1>
