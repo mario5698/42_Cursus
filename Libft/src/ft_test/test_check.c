@@ -34,18 +34,18 @@ void	check_comparations(int c)
 		printf(RED" KO [X]"reset);
 }
 
-int check_previus(int *letters, int (*f)(int), int (*h)(int))
+int	check_previus(int *letters, int (*f)(int), int (*h)(int))
 {
-	int equal;
-	int i;
-	
+	int	equal;
+	int	i;
+
 	i = 1;
 	equal = 1;
 	while (letters[i] != '\0')
 	{
 		if (f(letters[i]) != h(letters[i]))
-			equal=0;
+			equal = 0;
 		i++;
 	}
-	return(equal);
+	return (equal);
 }

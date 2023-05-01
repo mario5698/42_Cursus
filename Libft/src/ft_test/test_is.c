@@ -18,15 +18,16 @@
 #include "../../include/color.h"
 #include "../../include/test.h"
 
-void	test_funcions(int *letters,int (*f)(int), int (*h)(int), char *namefunction)
+void	test_funcions(int *letters, int (*f)(int), int (*h)(int),
+						char *namefunction)
 {
 	int	i;
-	int equal;
-	
+	int	equal;
+
 	i = 0;
 	printf(CYN"\nTEST %s"reset, namefunction);
 	equal = check_previus(letters, f, h);
-	if(equal)
+	if (equal)
 		check_comparations(equal);
 	else
 	{
@@ -39,4 +40,3 @@ void	test_funcions(int *letters,int (*f)(int), int (*h)(int), char *namefunction
 		}
 	}
 }
-

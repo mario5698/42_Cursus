@@ -46,7 +46,7 @@ int main(void)
 	printf(GRN"\n\n-------------TEST STR-------------"reset);
 	test_strlcat(phrase2, phrase1, num);
 	test_strlcpy(phrase2, phrase1, num);
-	/*test_strlen(str);
+	test_strlen(str);
 	test_strncmp(phrase1,phrase3, num);
 	test_strnstr(str, to_find, num);
 	test_strchr(str, letter);
@@ -63,9 +63,9 @@ int main(void)
 	test_memmove (&phrase1[0],&phrase1[2],6);
 	test_calloc(num, num);
 	test_substr(str, 0, 12);
-	test_strjoin(str, ",");
+	//test_strjoin(str, ",");
 	test_split(str, ' ');
-	test_itoa(42);*/
+	//test_itoa(42);
 	printf("\n");
 	return(0);
 }

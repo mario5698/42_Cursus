@@ -12,25 +12,20 @@
 
 const char	*ft_strrchr(const char *s, int c)
 {
-	int i;
-	int j;
+	int	i;
+	int	j;
 
 	i = 0;
 	j = 0;
-	if (c <0)
+	if (c < 0)
 		return (s);
-	while (s[i] !='\0')
+	while (s[i] != '\0')
 	{
 		if (s[i] == (char)c)
-		{
-			j=i;
-		}
+			j = i;
 		i++;
 	}
-
-	if(j>0 && s[i]=='\0')
-	{
-		return (s+j);
-	}
+	if (j > 0 && s[i] == '\0')
+		return (s + j);
 	return (0);
 }

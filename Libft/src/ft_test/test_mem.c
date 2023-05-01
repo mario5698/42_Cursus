@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test_mem.c                                          :+:      :+:    :+:   */
+/*   test_mem.c                                          :+:      :+:    :+:  */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marancib <marancib@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -18,7 +18,7 @@
 #include "../../include/color.h"
 #include "../../include/test.h"
 
-void test_memcpy(void *restrict dest, const void *restrict src, ft_size_t n)
+void	test_memcpy(void *restrict dest, const void *restrict src, ft_size_t n)
 {
 	printf(CYN"\n\nTEST MEMCPY "reset);
 	if (ft_memcpy(dest, src, n) == memcpy(dest, src, n))
@@ -29,20 +29,18 @@ void test_memcpy(void *restrict dest, const void *restrict src, ft_size_t n)
 		memcpy(dest, src, n));
 }
 
-void test_memset(void *s, int c, ft_size_t n)
+void	test_memset(void *s, int c, ft_size_t n)
 {
 	printf(CYN"\n\nTEST MEMSET "reset);
-	
-
 	if (ft_memset(s, c, n) == memset(s, c, n))
 		check_comparations(1);
 	else
 		check_comparations(0);
-	printf("\nComparation: %s -> %s",ft_memset(s, c, n), (char *)memset(s, c, n));
-
+	printf("\nComparation: %s -> %s", ft_memset(s, c, n),
+		(char *)memset(s, c, n));
 }
 
-void 	test_memchr(const void *s, int c, ft_size_t n)
+void	test_memchr(const void *s, int c, ft_size_t n)
 {
 	printf(CYN"\n\nTEST MEMCHR "reset);
 	if (ft_memchr(s, c, n) == memchr(s, c, n))
@@ -50,10 +48,10 @@ void 	test_memchr(const void *s, int c, ft_size_t n)
 	else
 		check_comparations(0);
 	printf("\nComparation: %s -> %s", (char *)ft_memchr(s, c, n),
-	(char *)memchr(s, c, n));
+		(char *)memchr(s, c, n));
 }
 
-void 	test_memcmp(const void *s, const void *c, ft_size_t n)
+void	test_memcmp(const void *s, const void *c, ft_size_t n)
 {
 	printf(CYN"\n\nTEST MEMCMP "reset);
 	if (ft_memcmp(s, c, n) == memcmp(s, c, n))
@@ -61,21 +59,21 @@ void 	test_memcmp(const void *s, const void *c, ft_size_t n)
 	else
 		check_comparations(0);
 	printf("\nComparation: %d -> %d", ft_memcmp(s, c, n),
-	memcmp(s, c, n));
+		memcmp(s, c, n));
 }
 
-void test_memmove(void *dest, void *src, ft_size_t n)
+void	test_memmove(void *dest, void *src, ft_size_t n)
 {
 	printf(CYN"\n\nTEST MEMMOVE "reset);
 	printf("\nComparation: %s -> %s", (char *) ft_memmove(dest, src, n),
-	(char *) memmove(dest, src, n));
+		(char *) memmove(dest, src, n));
 	if (ft_memmove(dest, src, n) == memmove(dest, src, n))
 		check_comparations(1);
 	else
 		check_comparations(0);
 }
 
-void 	test_calloc(size_t count, size_t size)
+void	test_calloc(size_t count, size_t size)
 {
 	printf(CYN"\n\nTEST CALLOC "reset);
 	if (sizeof(ft_calloc(count, size)) == sizeof(calloc(count, size)))
@@ -83,18 +81,5 @@ void 	test_calloc(size_t count, size_t size)
 	else
 		check_comparations(0);
 	printf("\nComparation: %lu -> %lu", sizeof(ft_calloc(count, size)),
-	sizeof(calloc(count, size)));
+		sizeof(calloc(count, size)));
 }
-
-
-
-
-
-
-
-
-
-
-
-
-

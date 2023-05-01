@@ -12,14 +12,12 @@
 
 const char	*ft_strchr(const char *s, int c)
 {
-	if (c <0)
+	if (c < 0)
 		return (s);
 	while (*s)
 	{
 		if (*s == (char)c)
-		{
 			return (s);
-		}
 		s++;
 	}
 	return (0);

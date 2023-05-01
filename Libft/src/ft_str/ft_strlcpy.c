@@ -12,7 +12,8 @@
 
 #include"libft.h"
 
-ft_size_t ft_strlcpy(char *restrict dest, char *restrict src, unsigned int size)
+ft_size_t	ft_strlcpy(char *restrict dest, char *restrict src,
+			unsigned int size)
 {
 	unsigned int	i;
 	unsigned int	j;
