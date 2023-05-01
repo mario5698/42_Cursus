@@ -1,6 +1,13 @@
 <h1 align="center">
 	✏️ LIBFT
 </h1>
+<h3 align="center">
+	<a href="#%EF%B8%8F-about">About</a>
+	<span> · </span>
+	<a href="#%EF%B8%8F-usage">Usage</a>
+	<span> · </span>
+	<a href="#-testing">Testing</a>
+</h3>
 
 ---
 
@@ -35,11 +42,6 @@ $ make
 To use the library functions in your code, simply include its header:
 
 ```C
-#include "ft_printf.h"
+#include "libft.h"
 ```
 
-## 📋 Testing
-
-You can use this third party tester to fully test the project:
-
-* [Tripouille/printfTester](https://github.com/Tripouille/printfTester)
