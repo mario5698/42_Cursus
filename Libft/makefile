@@ -51,12 +51,9 @@ SRC_FILES+=$(addprefix $(FTSTR_DIR),$(FTSTR))
 SRC_FILES+=$(addprefix $(FTTEST_DIR),$(FTTEST))
 #SRC_FILES+=$(addprefix $(FTPUT_DIR),$(FTPUT))
 #SRC_FILES+=$(addprefix $(FTLST_DIR),$(FTLST))
-
 SRCS 		= 	$(addprefix $(SRCS_DIR), $(addsuffix .c, $(SRC_FILES)))
 OBJS 		= 	$(addprefix $(OBJS_DIR), $(addsuffix .o, $(SRC_FILES)))
-
-###
-
+#####################################################################
 OBJSF		=	.cache_exists
 
 all:		$(NAME)

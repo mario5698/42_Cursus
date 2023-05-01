@@ -31,10 +31,10 @@ int main(void)
 	char nums[]="-564654";
 	char phrasestrcpy[16];
 	int letter='a';
-	
 	char *dst;
 	void *src;
 	ft_size_t num = 5 ;
+	
 	printf(GRN"\n-------------TEST IS-------------\n"reset);
 	test_funcions(letters, &ft_isascii, &isascii, "ISASCII");
 	test_funcions(letters, &ft_isalpha, &isalpha, "ISALPHA");
@@ -66,6 +66,7 @@ int main(void)
 	//test_strjoin(str, ",");
 	test_split(str, ' ');
 	//test_itoa(42);
+	
 	printf("\n");
 	return(0);
 }
