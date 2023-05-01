@@ -1,14 +1,5 @@
 {
 	"files.associations": {
-		"stdlib.h": "c",
-		"test.h": "c",
-		"ctype.h": "c",
-		"libft.h": "c",
-		"string.h": "c",
-		"stdio.h": "c",
-		"__string": "c",
-		"cstring": "c",
-		"__bit_reference": "c",
 		"__locale": "c"
 	}
 }

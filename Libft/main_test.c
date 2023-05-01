@@ -14,9 +14,9 @@
 #include <ctype.h>
 #include <stdlib.h>
 #include <string.h>
-#include "sources/libft.h"
-#include "sources/color.h"
-#include "sources/test.h"
+#include "include/libft.h"
+#include "include/color.h"
+#include "include/test.h"
 
 int main(void)
 {
@@ -35,7 +35,6 @@ int main(void)
 	char *dst;
 	void *src;
 	ft_size_t num = 5 ;
-	
 	printf(GRN"\n-------------TEST IS-------------\n"reset);
 	test_funcions(letters, &ft_isascii, &isascii, "ISASCII");
 	test_funcions(letters, &ft_isalpha, &isalpha, "ISALPHA");
@@ -44,8 +43,7 @@ int main(void)
 	test_funcions(letters, &ft_isprint, &isprint, "ISPRINT");
 	test_funcions(letters, &ft_tolower, &tolower, "TOLOWER");
 	test_funcions(letters, &ft_toupper, &toupper, "TOUPPER");
-
-	printf(GRN"\n\n-------------TEST STR-------------"reset);
+	/*printf(GRN"\n\n-------------TEST STR-------------"reset);
 	test_strlen(str);
 	test_strcat(phrase2, phrase1);
 	test_strlcpy(phrase2, phrase1);
@@ -66,8 +64,8 @@ int main(void)
 	test_calloc(num, num);
 	test_substr(str, 0, 12);
 	test_strjoin(str, ",");
-	//test_split(str, ' ');
+	test_split(str, ' ');
+	test_itoa(42);*/
 	printf("\n");
-	//test_itoa(42);
 	return(0);
 }
