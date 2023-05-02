@@ -86,7 +86,7 @@ void	test_strchr(const char *str, int to_find)
 
 void	test_strrchr(const char *str, int to_find)
 {
-	printf(CYN"\nTEST STRCHR"reset);
+	printf(CYN"\nTEST STRRCHR"reset);
 	if (ft_strrchr(str, to_find) == strrchr(str, to_find))
 		check_comparations(1);
 	else
@@ -129,13 +129,13 @@ void	test_strjoin(char const *s1, char const *s2)
 
 void	test_strtrim(char const *s1, char const *set)
 {
-	printf(RED"\nPENDIENTE ARREGLO"reset);
 	printf(CYN"\nTEST STRTRIM"reset);
+	printf("\nPhrase: %s", s1);
 	if (sizeof(ft_strtrim(s1, set)) > 0)
 		check_comparations(1);
 	else
 		check_comparations(0);
-	printf("\nComparation: %s", ft_strtrim(s1, set));
+	printf("\nResult: %s", ft_strtrim(s1, set));
 }
 
 void	test_split(char const *s, char c)

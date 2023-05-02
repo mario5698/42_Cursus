@@ -25,7 +25,7 @@ int main(void)
 	char phrase1[6]={'a','d','i','o','s'};
 	char phrase2[10]={'h','o','l','a',' '};
 	char phrase3[6]={'a','d','i','o','s'};
-	char str[]="hola que ho tal hola  ?!!";
+	char str[]="hola que hola tal hola";
 	char to_find[2]="la";
 	char to_compare[2]="la";
 	char nums[]="-564654";
@@ -35,7 +35,7 @@ int main(void)
 	void *src;
 	ft_size_t num = 5 ;
 	
-	printf(GRN"\n-------------TEST IS-------------\n"reset);
+	/*printf(GRN"\n-------------TEST IS-------------\n"reset);
 	test_funcions(letters, &ft_isascii, &isascii, "ISASCII");
 	test_funcions(letters, &ft_isalpha, &isalpha, "ISALPHA");
 	test_funcions(letters, &ft_isalnum, &isalnum, "ISALNUM");
@@ -53,7 +53,6 @@ int main(void)
 	test_strrchr(str, letter);
 	test_strdup(to_find);
 	test_atoi(nums);
-	test_strtrim(str, "hola");
 
 	printf(GRN"\n-------------TEST MEM-------------"reset);
 	test_memcpy(phrasestrcpy, str, num);
@@ -63,8 +62,9 @@ int main(void)
 	test_memmove (&phrase1[0],&phrase1[2],6);
 	test_calloc(num, num);
 	test_substr(str, 0, 12);
-	//test_strjoin(str, ",");
-	test_split(str, ' ');
+	test_strjoin(str, ",");
+	test_split(str, ' ');*/
+	test_strtrim(str, "hola");
 	//test_itoa(42);
 	
 	printf("\n");

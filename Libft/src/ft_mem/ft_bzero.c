@@ -20,5 +20,5 @@ void	ft_bzero(void *s, ft_size_t n)
 	local = (char *)s;
 	i = 0;
 	while (i < n)
-		*(local + i++) = '\0';
+		*(local + i++) = '0';
 }
