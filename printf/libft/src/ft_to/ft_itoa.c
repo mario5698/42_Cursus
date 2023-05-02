@@ -1,30 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcat.c                                        :+:      :+:    :+:   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marancib <marancib@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/19 19:24:32 by marancib          #+#    #+#             */
-/*   Updated: 2023/04/19 19:24:33 by marancib         ###   ########.fr       */
+/*   Created: 2023/05/01 16:08:18 by marancib          #+#    #+#             */
+/*   Updated: 2023/05/01 16:08:19 by marancib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strcat(char *restrict dest, char *restrict src)
-{
-	int	i;
-	int	o;
+#include "libft.h"
 
-	i = 0;
-	o = 0;
-	while (dest[i] != '\0')
-		i++;
-	while (src[o] != '\0')
-	{
-		dest[i] = src[o];
-		i++;
-		o++;
-	}
-	dest[i] = '\0';
-	return (dest);
+#include<stdio.h>
+
+char *ft_itoa(int n)
+{
+	char pointer[] ="42";
+	char * dst = pointer;
+	printf("ITOA %d", n);
+
+	return(dst);
 }

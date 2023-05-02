@@ -1,36 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_bzero.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marancib <marancib@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marancib <marancib@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/20 23:08:14 by marancib          #+#    #+#             */
-/*   Updated: 2023/04/19 19:24:54 by marancib         ###   ########.fr       */
+/*   Created: 2023/04/21 14:05:49 by marancib          #+#    #+#             */
+/*   Updated: 2023/05/01 13:02:24 by marancib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-const char	*ft_strrchr(const char *s, int c)
+#include "libft.h"
+
+void	ft_bzero(void *s, ft_size_t n)
 {
-	int i;
-	int j;
+	char		*local;
+	ft_size_t	i;
 
+	local = (char *)s;
 	i = 0;
-	j = 0;
-	if (c <0)
-		return (s);
-	while (s[i] !='\0')
-	{
-		if (s[i] == (char)c)
-		{
-			j=i;
-		}
-		i++;
-	}
-
-	if(j>0 && s[i]=='\0')
-	{
-		return (s+j);
-	}
-	return (0);
+	while (i < n)
+		*(local + i++) = '\0';
 }

@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                       :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marancib <marancib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,17 +10,27 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-const char	*ft_strchr(const char *s, int c)
+#include"libft.h"
+
+const char	*ft_strnstr(const char *str, const char *to_find, ft_size_t nb)
 {
-	if (c <0)
-		return (s);
-	while (*s)
+	ft_size_t		j;
+	int				i;
+
+	j = 0;
+	if (!*to_find)
+		return (str);
+	while (*str && j < nb)
 	{
-		if (*s == (char)c)
+		if (*str == *to_find)
 		{
-			return (s);
+			i = 1;
+			while (to_find[i] && str[i] == to_find[i])
+				i++;
+			if (!to_find[i])
+				return (str);
 		}
-		s++;
+		str++;
 	}
 	return (0);
 }

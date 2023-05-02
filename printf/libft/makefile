@@ -1,28 +1,95 @@
-NAME = libft.a
-OBJECTS = srcs/ft_atoi.o srcs/ft_isalnum.o srcs/ft_isalpha.o \
-srcs/ft_isascii.o srcs/ft_isdigit.o srcs/ft_isprint.o \
-srcs/ft_strcat.o srcs/ft_strcpy.o srcs/ft_strlen.o \
-srcs/ft_strncmp.o srcs/ft_strnstr.o srcs/ft_tolower.o \
-srcs/ft_toupper.o srcs/ft_strchr.o srcs/ft_strrchr.o \
-srcs/ft_substr.o srcs/ft_strdup.o srcs/ft_memcpy.o srcs/ft_memset.o \
-srcs/ft_memchr.o srcs/ft_memcmp.o srcs/ft_calloc.o srcs/ft_memmove.o srcs/ft_strjoin.o\
-srcs/ft_strtrim.o srcs/ft_split.o srcs/ft_itoa.o
-CFLAGS = -Wall -Werror -Wextra
+#Standard
+NAME		=	libft.a
+INCLUDES	=	include/
+SRCS_DIR 	=	src/
+OBJS_DIR	=	obj/
+CC			=	gcc
+CFLAGS		=	-Wall -Werror -Wextra -I
+RM			=	rm -f
+AR			=	ar rcs
 
-${NAME}: ${OBJECTS}
-	ar rc ${NAME}  ${OBJECTS}
+#Colors
+DEF_COLOR = \033[0;39m
+GRAY = \033[0;90m
+RED = \033[0;91m
+GREEN = \033[0;92m
+YELLOW = \033[0;93m
+BLUE = \033[0;94m
+MAGENTA = \033[0;95m
+CYAN = \033[0;96m
+WHITE = \033[0;97m
 
-all: ${NAME}
+#Sources
+FTIS_DIR	=	ft_is/
+FTIS		=	ft_isalnum ft_isalpha ft_isascii ft_isdigit ft_isprint
 
-%.o : %.c
-	gcc  -c ${CFLAGS} $< -o $@
-	@printf"${no_c}\r Compailing $@"
-	@echo"A"
+FTMEM_DIR	=	ft_mem/
+FTMEM		=	ft_bzero ft_calloc ft_memchr ft_memcmp ft_memmove ft_memset ft_memcpy
 
-fclean: clean
-	rm -f ${NAME}
+FTTO_DIR	=	ft_to/
+FTTO		=	ft_atoi ft_itoa ft_tolower ft_toupper
+
+FTSTR_DIR	=	ft_str/
+FTSTR		=	ft_split ft_strchr ft_strdup ft_strjoin \
+				ft_strlcat ft_strlcpy ft_strlen ft_strncmp \
+				ft_strnstr ft_strrchr ft_strtrim ft_substr
+
+FTTEST_DIR	=	ft_test/
+FTTEST		=	test_check test_is test_mem test_str test
+
+#FTPUT_DIR	=	ft_put/
+#FTPUT		=	ft_putchar_fd ft_putendl_fd ft_putnbr_fd ft_putstr_fd
+
+#FTLST_DIR	=	ft_lst/
+#FTLST		=	ft_lstadd_back ft_lstadd_front ft_lstclear ft_lstdelone \
+				ft_lstiter ft_lstlast ft_lstmap ft_lstnew ft_lstsize
+
+SRC_FILES+=$(addprefix $(FTIS_DIR),$(FTIS))
+SRC_FILES+=$(addprefix $(FTMEM_DIR),$(FTMEM))
+SRC_FILES+=$(addprefix $(FTTO_DIR),$(FTTO))
+SRC_FILES+=$(addprefix $(FTSTR_DIR),$(FTSTR))
+SRC_FILES+=$(addprefix $(FTTEST_DIR),$(FTTEST))
+#SRC_FILES+=$(addprefix $(FTPUT_DIR),$(FTPUT))
+#SRC_FILES+=$(addprefix $(FTLST_DIR),$(FTLST))
+SRCS 		= 	$(addprefix $(SRCS_DIR), $(addsuffix .c, $(SRC_FILES)))
+OBJS 		= 	$(addprefix $(OBJS_DIR), $(addsuffix .o, $(SRC_FILES)))
+#####################################################################
+OBJSF		=	.cache_exists
+
+all:		$(NAME)
+
+$(NAME):	$(OBJS)
+			@$(AR) $(NAME) $(OBJS)
+			@ranlib $(NAME)
+			@echo "\n$(GREEN)Libft compiled!$(DEF_COLOR)"
+
+$(OBJS_DIR)%.o : $(SRCS_DIR)%.c | $(OBJSF)
+	@printf "$(YELLOW)\rCompiling: $< $(DEF_COLOR)"
+	@$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
+
+$(OBJSF):
+	@mkdir -p $(OBJS_DIR)
+	@mkdir -p $(OBJS_DIR)$(FTIS_DIR)
+	@mkdir -p $(OBJS_DIR)$(FTMEM_DIR)
+	@mkdir -p $(OBJS_DIR)$(FTTO_DIR)
+	@mkdir -p $(OBJS_DIR)$(FTSTR_DIR)
+	@mkdir -p $(OBJS_DIR)$(FTTEST_DIR)
+#@mkdir -p $(OBJS_DIR)$(FTPUT_DIR)
+#@mkdir -p $(OBJS_DIR)$(FTLST_DIR)
 
 clean:
-	rm -f ${OBJECTS}
+	@$(RM) -rf $(OBJS_DIR)
+	@$(RM) -f $(OBJSF)
+	@echo "$(BLUE)libft objects files cleaned!$(DEF_COLOR)"
 
-re: fclean all%
+fclean:		clean
+	@$(RM) -f $(NAME)
+	@echo "$(CYAN)libft executable files cleaned!$(DEF_COLOR)"
+
+re:			fclean all
+	@echo "$(GREEN)Cleaned and rebuilt everything for libft!$(DEF_COLOR)"
+
+norm:
+	@norminette $(SRCS) $(INCLUDES) | grep -v Norme -B1 || true
+
+.PHONY:		all clean fclean re norm

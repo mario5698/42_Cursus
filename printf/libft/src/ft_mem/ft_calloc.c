@@ -10,34 +10,34 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../sources/libft.h"
+#include "libft.h"
 #include <stdlib.h>
+
 void	*ft_calloc(ft_size_t count, ft_size_t size)
 {
 	ft_size_t			i;
-	char 		**matrix;
-	
+	char				**matrix;
+
 	i = 0;
-	
 	matrix = (char **)malloc(count);
-	if(matrix == NULL)
-		return(NULL);
-	while(i<count)
+	if (matrix == NULL)
+		return (NULL);
+	while (i < count)
 	{
 		matrix[i] = (char *)malloc(size);
-		if(matrix[i] == NULL)
+		if (matrix[i] == NULL)
 		{
-			while(--i>=0)
+			while (--i >= 0)
 			{
 				free(matrix[i]);
-				matrix[i]=NULL;
+				matrix[i] = NULL;
 			}
 			free(matrix);
-			matrix=NULL;
-			return(NULL);
-			}
-		ft_memset(matrix, 0,size);
+			matrix = NULL;
+			return (NULL);
+		}
+		ft_memset(matrix, 0, size);
 		i++;
 	}
-	return	(matrix);
+	return (matrix);
 }
