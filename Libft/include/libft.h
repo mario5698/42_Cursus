@@ -29,5 +29,6 @@ char		**ft_split(char const *s, char  c);
 char		*ft_itoa(int n);
 ft_size_t	ft_strlcpy(char *restrict dest, char *restrict src, unsigned int size);
 void		delStart(char *local,char const *s1, char const *set);
+char		*ft_itoa(int n);
 
 #endif

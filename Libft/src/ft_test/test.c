@@ -55,3 +55,13 @@ void	test_atoi(char *str)
 		check_comparations(0);
 	printf("\nComparation %d -> %d\n", ft_atoi(str), atoi(str));
 }
+
+void	test_itoa(int nb)
+{
+	printf(CYN"\nTEST ITOA "reset);
+	if (sizeof(ft_itoa(nb))>0)
+		check_comparations(1);
+	else
+		check_comparations(0);
+	printf("\nComparation %s \n", ft_itoa(nb));
+}

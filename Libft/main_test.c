@@ -35,6 +35,7 @@ int main(void)
 	void *src;
 	ft_size_t num = 5 ;
 	
+	test_itoa(5311);
 	/*printf(GRN"\n-------------TEST IS-------------\n"reset);
 	test_funcions(letters, &ft_isascii, &isascii, "ISASCII");
 	test_funcions(letters, &ft_isalpha, &isalpha, "ISALPHA");
@@ -63,10 +64,9 @@ int main(void)
 	test_calloc(num, num);
 	test_substr(str, 0, 12);
 	test_strjoin(str, ",");
-	test_split(str, ' ');*/
+	test_split(str, ' ');
 	test_strtrim(str, "hola");
-	//test_itoa(42);
-	
+	*/
 	printf("\n");
 	return(0);
 }
