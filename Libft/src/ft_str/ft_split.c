@@ -11,8 +11,6 @@
 /* ************************************************************************** */
 
 #include"libft.h"
-#include <stdlib.h>
-#include<stdio.h>
 
 int	nextc(char const *s1, char c, int position)
 {

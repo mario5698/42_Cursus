@@ -11,30 +11,55 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-#include<stdlib.h>
-#include<stdio.h>
 
-char *ft_itoa(int n)
+void	getnums(char *dst, int n)
 {
-	char	*dst;
-	int		i;
-	int		j;
-	
-	i = 0;
+	int	i;
+	int	j;
+
+	i = 1;
 	j = 0;
-	while(n > 9)
+	while (n > 9)
 	{
-		//printf("%d\n", n);
-		dst = (char *) malloc (sizeof(char));
 		i = n / 10;
 		n = n % 10;
-		dst[j] = n + 48 ;
-		printf(" %d",n);
+		dst[j] = (char) n + 48 ;
 		n = i;
 		j++;
-	}	
-	printf(" -%d",n);
+	}
 	dst[j] = n + 48 ;
-	printf("\n%s\n",dst);
-	return(dst);
+}
+
+void	changeorder(char *change, char *dst, int counter)
+{
+	int	i;
+
+	i = 0;
+	while (counter--)
+	{
+		change[i] = dst[counter];
+		i++;
+	}
+}
+
+char	*ft_itoa(int n)
+{
+	char	*dst;
+	char	*change;
+	int		i;
+	int		counter;
+
+	i = 1;
+	counter = 0;
+	dst = NULL;
+	while (i < n)
+	{
+		i *= 10;
+		counter++;
+	}
+	dst = (char *) malloc (sizeof(char) * counter);
+	change = (char *) malloc (sizeof(char) * counter);
+	getnums(dst, n);
+	changeorder(change, dst, counter);
+	return (change);
 }

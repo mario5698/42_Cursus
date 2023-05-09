@@ -6,19 +6,24 @@
 /*   By: marancib <marancib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 23:08:14 by marancib          #+#    #+#             */
-/*   Updated: 2023/04/19 19:24:54 by marancib         ###   ########.fr       */
+/*   Updated: 2023/05/05 21:24:29 by marancib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-const char	*ft_strchr(const char *s, int c)
+char	*ft_strchr(const char *s, int c)
 {
+	char	*dst;
+
+	dst = (char *)s;
 	if (c < 0)
-		return (s);
-	while (*s)
+		return (dst);
+	while (*dst)
 	{
-		if (*s == (char)c)
-			return (s);
-		s++;
+		if (*dst == (char)c)
+			return (dst);
+		dst++;
 	}
+	if ((char) c == '\0')
+		return (dst++);
 	return (0);
 }

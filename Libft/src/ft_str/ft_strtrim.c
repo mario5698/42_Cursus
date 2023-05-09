@@ -11,13 +11,11 @@
 /* ************************************************************************** */
 
 #include"libft.h"
-#include <stdlib.h>
-#include <stdio.h>
 
 void	strtrim_str(char *str, char const *set)
 {
-	int i;
-	int j;
+	int	i;
+	int	j;
 
 	i = 0;
 	while (str[i] && ft_strchr(set, str[i]))

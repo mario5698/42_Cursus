@@ -1,6 +1,6 @@
 #Standard
 NAME		=	libft.a
-INCLUDES	=	include/
+INCLUDES	=	./
 SRCS_DIR 	=	src/
 OBJS_DIR	=	obj/
 CC			=	gcc
@@ -34,9 +34,6 @@ FTSTR		=	ft_split ft_strchr ft_strdup ft_strjoin \
 				ft_strlcat ft_strlcpy ft_strlen ft_strncmp \
 				ft_strnstr ft_strrchr ft_strtrim ft_substr
 
-FTTEST_DIR	=	ft_test/
-FTTEST		=	test_check test_is test_mem test_str test
-
 #FTPUT_DIR	=	ft_put/
 #FTPUT		=	ft_putchar_fd ft_putendl_fd ft_putnbr_fd ft_putstr_fd
 
@@ -48,7 +45,6 @@ SRC_FILES+=$(addprefix $(FTIS_DIR),$(FTIS))
 SRC_FILES+=$(addprefix $(FTMEM_DIR),$(FTMEM))
 SRC_FILES+=$(addprefix $(FTTO_DIR),$(FTTO))
 SRC_FILES+=$(addprefix $(FTSTR_DIR),$(FTSTR))
-SRC_FILES+=$(addprefix $(FTTEST_DIR),$(FTTEST))
 #SRC_FILES+=$(addprefix $(FTPUT_DIR),$(FTPUT))
 #SRC_FILES+=$(addprefix $(FTLST_DIR),$(FTLST))
 SRCS 		= 	$(addprefix $(SRCS_DIR), $(addsuffix .c, $(SRC_FILES)))
@@ -62,6 +58,7 @@ $(NAME):	$(OBJS)
 			@$(AR) $(NAME) $(OBJS)
 			@ranlib $(NAME)
 			@echo "\n$(GREEN)Libft compiled!$(DEF_COLOR)"
+			@echo "$(HEADER)"
 
 $(OBJS_DIR)%.o : $(SRCS_DIR)%.c | $(OBJSF)
 	@printf "$(YELLOW)\rCompiling: $< $(DEF_COLOR)"
@@ -93,3 +90,4 @@ norm:
 	@norminette $(SRCS) $(INCLUDES) | grep -v Norme -B1 || true
 
 .PHONY:		all clean fclean re norm
+

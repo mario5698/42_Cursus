@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include"libft.h"
-#include<stdlib.h>
 
 const char	*ft_strdup(const char *src)
 {

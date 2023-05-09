@@ -11,12 +11,11 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 
-void	*ft_calloc(ft_size_t count, ft_size_t size)
+void	*ft_calloc(size_t count, size_t size)
 {
-	ft_size_t			i;
-	char				**matrix;
+	size_t	i;
+	char	**matrix;
 
 	i = 0;
 	matrix = (char **)malloc(count);

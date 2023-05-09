@@ -12,10 +12,10 @@
 
 #include"libft.h"
 
-ft_size_t	ft_strlcat(char *dest, char *src, unsigned int size)
+size_t	ft_strlcat(char *dest, char *src, size_t size)
 {
-	unsigned int	i;
-	unsigned int	j;
+	size_t	i;
+	size_t	j;
 
 	i = -1;
 	while (++i < size && *dest)

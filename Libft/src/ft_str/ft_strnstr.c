@@ -12,25 +12,31 @@
 
 #include"libft.h"
 
-const char	*ft_strnstr(const char *str, const char *to_find, ft_size_t nb)
+char	*ft_strnstr(const char *str, const char *to_find, size_t nb)
 {
-	ft_size_t		j;
-	int				i;
+	size_t	j;
+	int		i;
+	char	*str1;
 
+	str1 = (char *)str;
 	j = 0;
 	if (!*to_find)
-		return (str);
-	while (*str && j < nb)
+		return (str1);
+	while (*str1 && j < nb)
 	{
-		if (*str == *to_find)
+		if (*str1 == *to_find)
 		{
 			i = 1;
-			while (to_find[i] && str[i] == to_find[i])
+			while (to_find[i] && str1[i] == to_find[i] && j < nb)
+			{
 				i++;
+				j++;
+			}
 			if (!to_find[i])
-				return (str);
+				return (str1);
 		}
-		str++;
+		str1++;
+		j++;
 	}
-	return (0);
+	return (NULL);
 }
