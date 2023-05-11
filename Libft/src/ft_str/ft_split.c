@@ -46,10 +46,13 @@ char	**ft_split(char const *s, char c)
 	i = 0;
 	lastposition = 0;
 	position = 0;
+	local = NULL;
 	if (sizeof(s) == '\0')
 		return (NULL);
 	local = (char **)malloc(sizeof(char *) * ft_strlen(s));
 	counter = counter_char(s, c);
+	if(counter == (int)ft_strlen(s))
+		return(local);
 	while (i <= counter)
 	{
 		position = nextc(s, c, lastposition);

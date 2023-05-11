@@ -12,59 +12,44 @@
 
 #include "libft.h"
 
-int getespace(int num)
+static int	ft_len(int num)
 {
 	int		counter;
 
 	counter = 0;
-	if(num==0)
-		return(counter+1);
+	if (num == 0)
+		return (counter + 1);
 	while (num > 0)
 	{
 		num /= 10;
 		counter++;
 	}
-	return(counter);
+	return (counter);
 }
 
-int ft_isnegative(int nbr)
+static char	*ft_array(char *x, size_t number, int len)
 {
-	int negative;
-
-	negative = 0;
-	if (nbr < 0)
-		negative = 1;
-	return(negative);
+	while (number > 0)
+	{
+		x[len--] = 48 + (number % 10);
+		number = number / 10;
+	}
+	return (x);
 }
 
 char	*ft_itoa(int n)
 {
 	char	*dst;
-	int 	i;
-	int 	counter;
-	int 	negative;
+	int		counter;
 
-	dst = NULL;
-	counter=0;
-	i = 0;
-	negative = ft_isnegative(n);
-	if (negative)
-	{
-		counter++;
-		n *= -1;
-	}
-	counter += getespace(n);
+	counter = 0;
+	counter = ft_len(n);
 	dst = (char *) malloc (sizeof(char) * counter);
-	
-	if(counter==1)
-		dst[counter-1] =(char) n + 48;
-	while(--counter)
+	if (n < 0)
 	{
-		i = n % 10;
-		n /= 10;
-		dst[counter] =(char) i + 48;
+		n *= -1;
+		dst[0] = '-';
 	}
-	if(negative)
-		dst[counter] = '-';
+	dst = ft_array(dst, n, counter);
 	return (dst);
 }
