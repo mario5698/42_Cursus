@@ -24,7 +24,7 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	if (n < 1)
 		return (0);
 	n--;
-	while (st1[i] == st2[i] && st1[i] != '\0' && st2[i] != '\0' && n--)
+	while (st1[i] == st2[i] && n--)
 		i++;
-	return (st1[i] - st2[i]);
+	return ((st1[i] - st2[i]));
 }

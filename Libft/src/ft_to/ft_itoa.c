@@ -12,54 +12,59 @@
 
 #include "libft.h"
 
-void	getnums(char *dst, int n)
+int getespace(int num)
 {
-	int	i;
-	int	j;
+	int		counter;
 
-	i = 1;
-	j = 0;
-	while (n > 9)
+	counter = 0;
+	if(num==0)
+		return(counter+1);
+	while (num > 0)
 	{
-		i = n / 10;
-		n = n % 10;
-		dst[j] = (char) n + 48 ;
-		n = i;
-		j++;
+		num /= 10;
+		counter++;
 	}
-	dst[j] = n + 48 ;
+	return(counter);
 }
 
-void	changeorder(char *change, char *dst, int counter)
+int ft_isnegative(int nbr)
 {
-	int	i;
+	int negative;
 
-	i = 0;
-	while (counter--)
-	{
-		change[i] = dst[counter];
-		i++;
-	}
+	negative = 0;
+	if (nbr < 0)
+		negative = 1;
+	return(negative);
 }
 
 char	*ft_itoa(int n)
 {
 	char	*dst;
-	char	*change;
-	int		i;
-	int		counter;
+	int 	i;
+	int 	counter;
+	int 	negative;
 
-	i = 1;
-	counter = 0;
 	dst = NULL;
-	while (i < n)
+	counter=0;
+	i = 0;
+	negative = ft_isnegative(n);
+	if (negative)
 	{
-		i *= 10;
 		counter++;
+		n *= -1;
 	}
+	counter += getespace(n);
 	dst = (char *) malloc (sizeof(char) * counter);
-	change = (char *) malloc (sizeof(char) * counter);
-	getnums(dst, n);
-	changeorder(change, dst, counter);
-	return (change);
+	
+	if(counter==1)
+		dst[counter-1] =(char) n + 48;
+	while(--counter)
+	{
+		i = n % 10;
+		n /= 10;
+		dst[counter] =(char) i + 48;
+	}
+	if(negative)
+		dst[counter] = '-';
+	return (dst);
 }

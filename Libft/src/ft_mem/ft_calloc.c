@@ -15,26 +15,14 @@
 void	*ft_calloc(size_t count, size_t size)
 {
 	size_t	i;
-	char	**matrix;
+	char	*matrix;
 
 	i = 0;
-	matrix = (char **)malloc(count);
-	if (matrix == NULL)
+	matrix = (char *)malloc(sizeof(size) * count);
+	if (size == 0)
 		return (NULL);
 	while (i < count)
 	{
-		matrix[i] = (char *)malloc(size);
-		if (matrix[i] == NULL)
-		{
-			while (--i >= 0)
-			{
-				free(matrix[i]);
-				matrix[i] = NULL;
-			}
-			free(matrix);
-			matrix = NULL;
-			return (NULL);
-		}
 		ft_memset(matrix, 0, size);
 		i++;
 	}
