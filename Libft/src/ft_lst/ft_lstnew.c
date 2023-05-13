@@ -1,24 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marancib <marancib@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/22 17:44:06 by marancib          #+#    #+#             */
-/*   Updated: 2023/04/22 17:44:21 by marancib         ###   ########.fr       */
+/*   Created: 2023/05/13 14:28:29 by marancib          #+#    #+#             */
+/*   Updated: 2023/05/13 14:42:42 by marancib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_calloc(size_t count, size_t size)
+t_list	*ft_lstnew(void *content)
 {
-	char	*matrix;
+	t_list	*my_list;
 
-	matrix = malloc(size * count);
-	if (!(matrix))
+	my_list = (t_list *) malloc (sizeof(*my_list));
+	if (!(my_list))
 		return (NULL);
-	ft_bzero(matrix, count * size);
-	return (matrix);
+	my_list->content = content;
+	my_list->next = NULL;
+	return (my_list);
 }

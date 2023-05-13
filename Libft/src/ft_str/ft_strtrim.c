@@ -36,11 +36,11 @@ char	*ft_strtrim(char const *s1, char const *set)
 	if (!s1 || !set)
 		return (NULL);
 	len = ft_strlen(s1);
+	if (len == 0)
+		return (NULL);
 	while (len > 0 && ft_strchr(set, s1[len - 1]))
 		len--;
 	strtrim_str((char *)s1, set);
-	if (len == 0)
-		return (NULL);
 	res = ft_substr(s1, 0, len);
 	if (!res)
 		return (NULL);

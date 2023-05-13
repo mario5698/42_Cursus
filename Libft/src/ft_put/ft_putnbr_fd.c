@@ -1,24 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marancib <marancib@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/22 17:44:06 by marancib          #+#    #+#             */
-/*   Updated: 2023/04/22 17:44:21 by marancib         ###   ########.fr       */
+/*   Created: 2023/05/13 14:28:29 by marancib          #+#    #+#             */
+/*   Updated: 2023/05/13 14:42:42 by marancib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include"libft.h"
 
-void	*ft_calloc(size_t count, size_t size)
+void	ft_putnbr_fd(int n, int fd)
 {
-	char	*matrix;
+	char	*value;
+	int		i;
 
-	matrix = malloc(size * count);
-	if (!(matrix))
-		return (NULL);
-	ft_bzero(matrix, count * size);
-	return (matrix);
+	value = ft_itoa(n);
+	i = 0;
+	while (value[i] != '\0')
+	{
+		write(fd, &value[i], 1);
+		i++;
+	}
+	free(value);
 }

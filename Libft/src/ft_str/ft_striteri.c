@@ -1,24 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marancib <marancib@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/22 17:44:06 by marancib          #+#    #+#             */
-/*   Updated: 2023/04/22 17:44:21 by marancib         ###   ########.fr       */
+/*   Created: 2023/05/13 14:00:24 by marancib          #+#    #+#             */
+/*   Updated: 2023/05/13 14:07:43 by marancib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include"libft.h"
 
-void	*ft_calloc(size_t count, size_t size)
+void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
-	char	*matrix;
+	unsigned int	i;
 
-	matrix = malloc(size * count);
-	if (!(matrix))
-		return (NULL);
-	ft_bzero(matrix, count * size);
-	return (matrix);
+	i = 0;
+	while (s[i] != '\0')
+	{
+		(*f)(i, (char *)s + i);
+		i++;
+	}
 }

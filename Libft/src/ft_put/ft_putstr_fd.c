@@ -1,24 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marancib <marancib@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/22 17:44:06 by marancib          #+#    #+#             */
-/*   Updated: 2023/04/22 17:44:21 by marancib         ###   ########.fr       */
+/*   Created: 2023/05/13 14:28:29 by marancib          #+#    #+#             */
+/*   Updated: 2023/05/13 14:31:41 by marancib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include"libft.h"
 
-void	*ft_calloc(size_t count, size_t size)
+void	ft_putstr_fd(char *s, int fd)
 {
-	char	*matrix;
-
-	matrix = malloc(size * count);
-	if (!(matrix))
-		return (NULL);
-	ft_bzero(matrix, count * size);
-	return (matrix);
+	while (*s)
+	{
+		write (fd, s++, 1);
+	}
 }

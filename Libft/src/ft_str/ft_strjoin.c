@@ -23,7 +23,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	i = 0;
 	j = 0;
 	h = 0;
-	lenght = ft_strlen(s1) * ft_strlen(s2)+ft_strlen(s1);
+	lenght = ft_strlen(s1) * ft_strlen(s2) + ft_strlen(s1);
 	local = (char *)malloc(sizeof(char) * lenght + 1);
 	while (h < ft_strlen(s1))
 	{

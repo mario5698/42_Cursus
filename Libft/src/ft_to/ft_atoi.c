@@ -31,6 +31,7 @@ int	ft_atoi(const char *str)
 
 	i = 0;
 	n = 0;
+	negative = 0;
 	while (ft_isscape(str[i]))
 		i++;
 	while (str[i] == '-' || str[i] == '+')
