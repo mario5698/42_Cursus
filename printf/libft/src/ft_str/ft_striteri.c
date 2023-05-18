@@ -1,25 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marancib <marancib@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/13 14:28:29 by marancib          #+#    #+#             */
-/*   Updated: 2023/05/13 14:42:42 by marancib         ###   ########.fr       */
+/*   Created: 2023/05/13 14:00:24 by marancib          #+#    #+#             */
+/*   Updated: 2023/05/13 14:07:43 by marancib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include"libft.h"
 
-t_list	*ft_lstnew(void *content)
+void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
-	t_list	*my_list;
+	unsigned int	i;
 
-	my_list = (t_list *) malloc (sizeof(*my_list));
-	if (!(my_list))
-		return (NULL);
-	my_list->content = content;
-	my_list->next = NULL;
-	return (my_list);
+	i = 0;
+	while (s[i] != '\0')
+	{
+		(*f)(i, (char *)s + i);
+		i++;
+	}
 }

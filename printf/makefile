@@ -1,12 +1,13 @@
 #------------Standard----------
 NAME		=	libftprintf.a
-INCLUDES	=	include/
+INCLUDES	=	./
 SRCS_DIR 	=	src/
 OBJS_DIR	=	obj/
 CC			=	gcc
 CFLAGS		=	-Wall -Werror -Wextra -I
-RM			=	rm -f
+RM			=	rm -rf
 AR			=	ar rcs
+LIBFT		=	libft/ 
 
 #------------Colors------------
 DEF_COLOR = \033[0;39m
@@ -19,6 +20,12 @@ MAGENTA = \033[0;95m
 CYAN = \033[0;96m
 WHITE = \033[0;97m
 #------------Prefix------------ 
+
+FTIS_DIR	=	ft_print/
+FTIS		=	test
+
+SRC_FILES+=$(addprefix $(FTIS_DIR),$(FTIS))
+
 SRCS 		= 	$(addprefix $(SRCS_DIR), $(addsuffix .c, $(SRC_FILES)))
 OBJS 		= 	$(addprefix $(OBJS_DIR), $(addsuffix .o, $(SRC_FILES)))
 OBJSF		=	.cache_exists
@@ -28,8 +35,7 @@ all:		$(NAME)
 $(NAME):	$(OBJS)
 			@$(AR) $(NAME) $(OBJS)
 			@make -C $(LIBFT)
-			@ranlib $(NAME)
-			@cp libft/libft.a .
+			@cp libft/libft.a ./
 			@mv libft.a $(NAME)
 			@echo "\n$(GREEN)LibftPrintf compiled!$(DEF_COLOR)"
 
@@ -37,17 +43,20 @@ $(OBJS_DIR)%.o : $(SRCS_DIR)%.c | $(OBJSF)
 	@printf "$(YELLOW)\rCompiling: $< $(DEF_COLOR)"
 	@$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
 
+$(OBJSF):
+	@mkdir -p $(OBJS_DIR)
+
 clean:
-	@$(RM) -rf $(OBJ_DIR)
+	@$(RM) $(OBJ_DIR)
 	@make clean -C $(LIBFT)
-	@$(RM) -rf $(OBJS_DIR)
-	@$(RM) -f $(OBJSF)
+	@$(RM) $(OBJS_DIR)
+	@$(RM) $(OBJSF)
 	@echo "$(BLUE)libft objects files cleaned!$(DEF_COLOR)"
 
 fclean:		clean
-	@$(RM) -f $(NAME)
-	@$(RM) -f $(LIBFT)/libft.a
-	@$(RM) -f $(NAME)
+	@$(RM) $(NAME)
+	@make fclean -C $(LIBFT)
+
 	@echo "$(CYAN)libft executable files cleaned!$(DEF_COLOR)"
 
 re:			fclean all

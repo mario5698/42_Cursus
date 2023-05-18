@@ -1,31 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcat.c                                        :+:      :+:    :+:   */
+/*   ft_lstlast_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marancib <marancib@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/19 19:24:32 by marancib          #+#    #+#             */
-/*   Updated: 2023/04/19 19:24:33 by marancib         ###   ########.fr       */
+/*   Created: 2023/05/15 16:40:20 by marancib          #+#    #+#             */
+/*   Updated: 2023/05/15 16:40:21 by marancib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"libft.h"
 
-size_t	ft_strlcat(char *dest, char *src, size_t size)
+t_list	*ft_lstlast(t_list *lst)
 {
-	size_t	i;
-	size_t	j;
-
-	i = -1;
-	while (++i < size && *dest)
-		dest++;
-	if (i == size)
-		return (i + (unsigned int)ft_strlen(src));
-	j = -1;
-	while (src[++j])
-		if (j < size - i - 1)
-			*dest++ = src[j];
-	*dest = '\0';
-	return (i + j);
+	if (!(lst))
+		return (NULL);
+	while (lst->next != NULL)
+		lst = lst->next;
+	return (lst);
 }

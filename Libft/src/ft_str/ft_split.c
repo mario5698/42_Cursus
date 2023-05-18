@@ -6,60 +6,62 @@
 /*   By: marancib <marancib@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/01 15:47:47 by marancib          #+#    #+#             */
-/*   Updated: 2023/05/01 15:47:48 by marancib         ###   ########.fr       */
+/*   Updated: 2023/05/15 09:35:37 by marancib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"libft.h"
 
-int	nextc(char const *s1, char c, int position)
+static char	**ft_freeall(char **tab, size_t i)
 {
-	while (s1[position] != c)
-		position++;
-	return (position);
+	while (i-- > 0)
+		free(tab[i]);
+	free(tab);
+	return (NULL);
 }
 
-int	counter_char(char const *s1, char c)
+static size_t	ft_splitlen(const char *s, char c)
 {
-	int	i;
-	int	counter;
+	size_t	i;
 
 	i = 0;
-	counter = 0;
-	while (s1[i] != '\0')
+	while (*s)
 	{
-		if (s1[i] == c)
-			counter++;
-		i++;
+		while (*s == c)
+			s++;
+		if (*s)
+			i++;
+		while (*s && *s != c)
+			s++;
 	}
-	return (counter);
+	return (i);
 }
 
 char	**ft_split(char const *s, char c)
 {
-	char	**local;
-	int		position;
-	int		lastposition;
-	int		i;
-	int		counter;
+	char	**arr;
+	char	*start;
+	size_t	i;
 
-	i = 0;
-	lastposition = 0;
-	position = 0;
-	local = NULL;
-	if (sizeof(s) == '\0')
+	arr = ft_calloc((ft_splitlen(s, c) + 1), sizeof(char *));
+	if (!arr)
 		return (NULL);
-	local = (char **)malloc(sizeof(char *) * ft_strlen(s));
-	counter = counter_char(s, c);
-	if (counter == (int)ft_strlen(s))
-		return (local);
-	while (i <= counter)
+	i = 0;
+	while (*s)
 	{
-		position = nextc(s, c, lastposition);
-		*(local + i) = ft_substr(s, lastposition, position);
-		lastposition = position + 1;
-		i++;
+		while (*s == c)
+			s++;
+		if (*s)
+		{
+			start = (char *)s;
+			while (*s && *s != c)
+				s++;
+			arr[i] = ft_substr(start, 0, s - start);
+			if (!arr[i])
+				return (ft_freeall(arr, i));
+			i++;
+		}
 	}
-	*(local + i) = NULL;
-	return (local);
+	arr[i] = NULL;
+	return (arr);
 }

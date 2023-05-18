@@ -11,42 +11,19 @@
 /* ************************************************************************** */
 
 #include"libft.h"
-#include <stdlib.h>
-#include <stdio.h>
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	char	*local;
-	int		i;
-	int		j;
-	int		h;
-	int		lenght;
-	int		back;
+	size_t	start;
+	size_t	end;
 
-	i = 0;
-	j = 0;
-	h = 0;
-	back = 0;
-	lenght = ft_strlen(s1);
-	local = (char  *)malloc(sizeof(char) * lenght);
-	printf("%s", s1);
-	if (sizeof(local) < 1)
+	if (!s1 || !set)
 		return (NULL);
-	while (i < lenght)
-	{
-		if (s1[i] == set[j])
-		{
-			while (s1[i] == set[j] )
-			{
-				i++;
-				j++;
-				back++;
-			}
-			j = 0;
-		}
-		local[h] = s1[i];
-		i++;
-		h++;
-	}
-	return(local);
+	start = 0;
+	while (s1[start] && ft_strchr(set, s1[start]))
+		start++;
+	end = ft_strlen(s1);
+	while (end > start && ft_strchr(set, s1[end - 1]))
+		end--;
+	return (ft_substr(s1, start, end - start));
 }

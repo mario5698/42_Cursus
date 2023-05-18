@@ -1,23 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_lstadd_front_bonus.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marancib <marancib@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/12 17:32:45 by marancib          #+#    #+#             */
-/*   Updated: 2023/05/13 13:44:30 by marancib         ###   ########.fr       */
+/*   Created: 2023/05/13 16:15:45 by marancib          #+#    #+#             */
+/*   Updated: 2023/05/13 16:15:48 by marancib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<stdio.h>
-#include"libft.h"
+#include "libft.h"
 
-int	main(void)
+void	ft_lstadd_front(t_list **lst, t_list *new)
 {
-	if (ft_strrchr("test", '\0') == NULL)
-		printf("NULL");
-	else
-		printf("%s", ft_strrchr("teste", '\0'));
-	return (0);
-}
+	if (lst && new)
+	{
+		new->next = *lst;
+		*lst = new;
+	}
+}	

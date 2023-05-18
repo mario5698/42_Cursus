@@ -40,8 +40,8 @@ FTPUT_DIR	=	ft_put/
 FTPUT		=	ft_putchar_fd ft_putstr_fd ft_putendl_fd ft_putnbr_fd 
 
 FTLST_DIR	=	ft_lst/
-FTLST		=	ft_lstnew ft_lstadd_front
-#ft_lstadd_back ft_lstclear ft_lstdelone ft_lstiter ft_lstlast ft_lstmap ft_lstnew ft_lstsize
+FTLST		=	ft_lstnew_bonus ft_lstadd_front_bonus ft_lstsize_bonus ft_lstlast_bonus ft_lstadd_back_bonus \
+				ft_lstdelone_bonus ft_lstclear_bonus ft_lstiter_bonus ft_lstmap_bonus
 
 SRC_FILES+=$(addprefix $(FTIS_DIR),$(FTIS))
 SRC_FILES+=$(addprefix $(FTMEM_DIR),$(FTMEM))
@@ -84,6 +84,7 @@ clean:
 
 fclean:		clean
 	@$(RM) -f $(NAME)
+	@$(RM) -f .bonus
 	@echo "$(CYAN)libft executable files cleaned!$(DEF_COLOR)"
 
 re:			fclean all
@@ -92,9 +93,11 @@ re:			fclean all
 norm:
 	@norminette $(SRCS) $(INCLUDES) | grep -v Norme -B1 || true
 
-bonus:			$(OBJS_BONUS)
+bonus:	.bonus
+
+.bonus: $(OBJS_BONUS)
 			@$(AR) $(NAME) $(OBJS_BONUS) 
 			@printf "$(YELLOW)\rCompiling BONUS: $< $(DEF_COLOR)"
 			@echo "\n$(GREEN)\rLibft bonus compiled!$(DEF_COLOR)"
-
+			@touch .bonus
 .PHONY:		all clean fclean re norm

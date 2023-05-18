@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"libft.h"
+#include "libft.h"
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
@@ -18,24 +18,24 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	char		*local;
 	size_t		i;
 	size_t		j;
-	size_t		h;
 
 	i = 0;
 	j = 0;
-	h = 0;
-	lenght = ft_strlen(s1) * ft_strlen(s2) + ft_strlen(s1);
+	lenght = ft_strlen(s2) + ft_strlen(s1);
 	local = (char *)malloc(sizeof(char) * lenght + 1);
-	while (h < ft_strlen(s1))
+	if (!(local))
+		return (NULL);
+	while (i < ft_strlen(s1))
 	{
-		local[i] = s1[h];
-		j = 0;
-		while (s2[j] != '\0' && h < ft_strlen(s1) - 1)
-		{
-			local[++i] = s2[j];
-			j++;
-		}
+		local[i] = s1[i];
 		i++;
-		h++;
 	}
+	while (j < ft_strlen(s2))
+	{
+		local[i] = s2[j];
+		i++;
+		j++;
+	}
+	local[i] = '\0';
 	return (local);
 }

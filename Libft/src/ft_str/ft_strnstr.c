@@ -19,24 +19,23 @@ char	*ft_strnstr(const char *str, const char *to_find, size_t nb)
 	char	*str1;
 
 	str1 = (char *)str;
+	i = 0;
 	j = 0;
 	if (!*to_find)
 		return (str1);
-	while (*str1 && j < nb)
+	while (str1[i] && j < nb)
 	{
-		if (*str1 == *to_find)
+		if (str1[i] == *to_find)
 		{
-			i = 1;
-			while (to_find[i] && str1[i] == to_find[i] && j < nb)
+			while (to_find[j] && str1[i + j] == to_find[j] && i + j < nb)
 			{
-				i++;
 				j++;
+				if (!to_find[j])
+					return (&str1[i]);
 			}
-			if (!to_find[i])
-				return (str1);
 		}
-		str1++;
-		j++;
+		i++;
+		j = 0;
 	}
 	return (NULL);
 }
