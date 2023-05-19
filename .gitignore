@@ -8,7 +8,8 @@
 *.lib
 *.a
 
-# Executables
+# :wq
+Executables
 *.out
 
 # Temp files
@@ -19,8 +20,8 @@
 # Debug files
 *.dSYM/
 #compiler program
-main
+*/main
 #out file
-a.out
+*/a.out
 #test script
-test.sh
+*/test.sh
