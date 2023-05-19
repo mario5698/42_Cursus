@@ -1,3 +1,26 @@
-.DS_STORE
-.vscode/settings.json
+# System files
+.DS_Store
 
+# Object files
+*.o
+
+# Libraries
+*.lib
+*.a
+
+# Executables
+*.out
+
+# Temp files
+*.swp
+
+#subject
+*.pdf
+# Debug files
+*.dSYM/
+#compiler program
+main
+#out file
+a.out
+#test script
+test.sh

@@ -1,6 +1,6 @@
 #------------Standard----------
 NAME		=	libftprintf.a
-INCLUDES	=	./
+INCLUDES	=	includes
 SRCS_DIR 	=	src/
 OBJS_DIR	=	obj/
 CC			=	gcc
@@ -20,11 +20,9 @@ MAGENTA = \033[0;95m
 CYAN = \033[0;96m
 WHITE = \033[0;97m
 #------------Prefix------------ 
+PRFILES		=	test 
 
-FTIS_DIR	=	ft_print/
-FTIS		=	test
-
-SRC_FILES+=$(addprefix $(FTIS_DIR),$(FTIS))
+SRC_FILES+=$(PRFILES)
 
 SRCS 		= 	$(addprefix $(SRCS_DIR), $(addsuffix .c, $(SRC_FILES)))
 OBJS 		= 	$(addprefix $(OBJS_DIR), $(addsuffix .o, $(SRC_FILES)))
@@ -33,10 +31,10 @@ OBJSF		=	.cache_exists
 all:		$(NAME)
 
 $(NAME):	$(OBJS)
-			@$(AR) $(NAME) $(OBJS)
 			@make -C $(LIBFT)
 			@cp libft/libft.a ./
 			@mv libft.a $(NAME)
+			@$(AR) $(NAME) $(OBJS)
 			@echo "\n$(GREEN)LibftPrintf compiled!$(DEF_COLOR)"
 
 $(OBJS_DIR)%.o : $(SRCS_DIR)%.c | $(OBJSF)

@@ -1,6 +1,6 @@
 #Standard
 NAME		=	libft.a
-INCLUDES	=	./
+INCLUDES	=	../include
 SRCS_DIR 	=	src/
 OBJS_DIR	=	obj/
 CC			=	gcc
