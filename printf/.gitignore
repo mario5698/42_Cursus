@@ -1,0 +1,27 @@
+# System files
+.DS_Store
+#vscode 
+.vscode/settings.json
+# Object files
+*.o
+
+# Libraries
+*.lib
+*.a
+
+# Executables
+*.out
+
+# Temp files
+*.swp
+
+#subject
+*.pdf
+# Debug files
+*.dSYM/
+#compiler program
+main
+#out file
+a.out
+#test script
+test.sh

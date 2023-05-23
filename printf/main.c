@@ -1,11 +1,15 @@
 #include"./include/ft_printf.h"
 #include"./include/libft.h"
-#include<stdio.h>
-#include<stdarg.h>
+#include <stdio.h>
 
-int main(void)
+int	main(void)
 {
-	printf("\n\nvariadic functions: \n\n ");
-	printf("\nAddNumbers: 1+2= %d",AddNumbers(2,1,2));
-	return (0);
+	void *string= "1234";
+	int ftprint;
+	int prinf;
+	   ftprint = ft_printf(" %p %p", (void *)1234, (void *)1234);
+	   prinf = printf(" %p %p", (void *)1234, (void *)1234);
+
+	   printf("\n%d   ->    %d", ftprint, prinf);
+	return(0);
 }

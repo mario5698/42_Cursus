@@ -1,5 +1,5 @@
 clear
-make re 
+make 
 cc main.c -o main -L. libftprintf.a 
 ./main
 #make fclean

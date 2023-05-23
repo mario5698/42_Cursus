@@ -1,9 +1,30 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: marancib <marancib@student.42barcel>       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/05/23 17:47:38 by marancib          #+#    #+#             */
+/*   Updated: 2023/05/23 17:47:40 by marancib         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef FT_PRINTF
 # define FT_PRINTF
 # include<stdlib.h>
 # include<stdio.h>
 # include<unistd.h>
+# include<stdarg.h>
 
-int AddNumbers(int n, ...);
+int		ft_printf(const char *string, ...);
+int		ft_printnbr_hex (unsigned int nbr, char c);
+int		ft_printstr(char * str);
+int		ft_counternbr(int nbr);
+void	ft_revstr(char *string, int len);
+int		ft_printnbr_oct(int nbr);
+int		ft_isuppercase(char c);
+int		ft_printadrr_hex (unsigned long nbr);
+int		ft_printnbr_dec(int nbr);
 
 #endif
