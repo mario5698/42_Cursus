@@ -13,12 +13,12 @@
 #include"../include/libft.h"
 #include"../include/ft_printf.h"
 
-int	ft_counternbr(int nbr)
+int	ft_counternbr(unsigned int nbr)
 {
-	int	len;
+	unsigned int	len;
 
 	len = 0;
-	if (nbr <= 0)
+	if (nbr == 0)
 		len = 1;
 	while (nbr != 0)
 	{
@@ -28,21 +28,16 @@ int	ft_counternbr(int nbr)
 	return (len);
 }
 
-void	ft_revstr(char *string, int len)
+int	ft_revstr(char *string, unsigned int size)
 {
-	int		i;
-	char	tmp;
-
-	tmp = 0;
-	i = 0;
-	len = len - 1;
-	while (i <= (len / 2))
+	size--;
+	while (size >= 0)
 	{
-		tmp = string[i];
-		string[i] = string[len - i - 1];
-		string[len - i - 1] = tmp;
-		i++;
+		if (write(1, &string[size], 1) == -1)
+			return (-1);
+		size--;
 	}
+	return (1);
 }
 
 int	ft_isuppercase(char c)

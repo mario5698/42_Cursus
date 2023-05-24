@@ -22,26 +22,36 @@ int	ft_printstr(char *str)
 	int	len;
 
 	if (!str)
-		str = "(null)";
+	{
+		if (write (1, "(null)", 6) == -1)
+			return (-1);
+		return (6);
+	}
 	len = ft_strlen(str);
-	write(1, str, len);
+	if (write(1, str, len) == -1)
+		return (-1);
 	return (len);
 }
 
-int	ft_printchr(int c)
+int	ft_printchr(unsigned char c)
 {
-	write(1, &c, 1);
+	if (write(1, &c, 1) == -1)
+		return (-1);
 	return (1);
 }
 
 int	ft_printnbr(int nbr)
 {
-	int	n;
-	int	counter;
+	int		counter;
+	char	*str;
 
-	n = nbr;
-	counter = ft_counternbr(nbr);
-	write(1, ft_itoa(nbr), counter);
+	str = ft_itoa(nbr);
+	if (str == NULL)
+		return (-1);
+	counter = ft_printstr(str);
+	free(str);
+	if (counter == -1)
+		return (-1);
 	return (counter);
 }
 
@@ -51,20 +61,19 @@ int	ft_formats(va_list argvs, char c)
 
 	numprint = 0;
 	if (c == 'c')
-		numprint = ft_printchr(va_arg(argvs, int));
+		numprint = ft_printchr((char)va_arg(argvs, int));
 	else if (c == 's')
 		numprint = ft_printstr(va_arg(argvs, char *));
-	else if (c == 'p')
-		numprint = ft_printadrr_hex(va_arg(argvs, unsigned long));
 	else if (c == 'd' || c == 'i')
 		numprint = ft_printnbr(va_arg(argvs, int));
-	//else if (c == 'i')
-	//	numprint = ft_printnbr(va_arg(argvs, int));
-	else if (c == 'u')
-		numprint = ft_printnbr_dec(va_arg(argvs, int));
 	else if (c == 'x' || c == 'X')
 		numprint = ft_printnbr_hex(va_arg(argvs, unsigned int), c);
-	else if (c == '%')
+	else if (c == 'p')
+		numprint = ft_printadrr_hex(va_arg(argvs, unsigned long));
+	/*
+	else if (c == 'u')
+		numprint = ft_printnbr_dec(va_arg(argvs, int));
+	*/else if (c == '%')
 		numprint = ft_printchr('%');
 	return (numprint);
 }

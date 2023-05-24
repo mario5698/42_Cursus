@@ -20,8 +20,8 @@
 int		ft_printf(const char *string, ...);
 int		ft_printnbr_hex (unsigned int nbr, char c);
 int		ft_printstr(char * str);
-int		ft_counternbr(int nbr);
-void	ft_revstr(char *string, int len);
+int		ft_counternbr(unsigned int nbr);
+int	ft_revstr(char *string, unsigned int size);
 int		ft_printnbr_oct(int nbr);
 int		ft_isuppercase(char c);
 int		ft_printadrr_hex (unsigned long nbr);

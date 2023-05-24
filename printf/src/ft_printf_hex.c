@@ -13,6 +13,9 @@
 #include"../include/libft.h"
 #include"../include/ft_printf.h"
 
+
+
+
 int	ft_printnbr_hex(unsigned int nbr, char c)
 {
 	char			*nums;
@@ -20,10 +23,17 @@ int	ft_printnbr_hex(unsigned int nbr, char c)
 	int				len;
 	int				i;
 
+
+	if (nbr == 0)
+	{
+		if (write(1, "0", 1) == -1)
+			return (-1);
+		return (1);
+	}
 	i = 0;
 	character = 0;
 	len = ft_counternbr(nbr);
-	nums = malloc(sizeof(char) * len);
+	nums = malloc(sizeof(char) * len+1);
 	while (nbr != 0)
 	{
 		character = nbr % 16;
@@ -36,9 +46,8 @@ int	ft_printnbr_hex(unsigned int nbr, char c)
 		nums[i++] = character;
 		nbr = nbr / 16;
 	}
-	ft_revstr(nums, len);
-	nums++;
-	ft_printf("%s", nums);
+	if (ft_revstr(nums, len) == -1)
+		return (-1);
 	return (len);
 }
 
@@ -49,23 +58,25 @@ int	ft_printadrr_hex(unsigned long nbr)
 	int		i;
 	char	character;
 	int		counter;
-	counter = 0;
+
+	if (!nbr)
+	{
+		write(1, "0x0", 3);
+		return (-1);
+	}
+	len = 3;
+	len += ft_counternbr(nbr);
 	i = 0;
 	character = 0;
-	len = ft_counternbr(nbr) ;
-	nums = malloc(sizeof(char) * len);
+	nums = malloc(sizeof(char) * len + 1);
 	while (i < len - 1)
 	{
-		character = nbr % 16;
-		if (character < 10)
-			character += 48;
-		else
-			character += 55 + 32;
-		nums[i++] = character;
+		nums[i++] = "0123456789abcdef"[nbr % 16];
 		nbr = nbr / 16;
 	}
 	ft_revstr(nums, len);
 	counter = ft_printf("0x%s", nums);
+	free(nums);
 	return (counter);
 }
 
@@ -112,6 +123,7 @@ int	ft_printnbr_dec(int nbr)
 		len--;
 		i++;
 	}
+	tmp[i] = '\0';
 	result = ft_atoi(tmp);
 	ft_printf("%d",result);
 	return (result);

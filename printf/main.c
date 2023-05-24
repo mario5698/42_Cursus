@@ -7,8 +7,9 @@ int	main(void)
 	void *string= "1234";
 	int ftprint;
 	int prinf;
-	   ftprint = ft_printf(" %p %p", (void *)1234, (void *)1234);
-	   prinf = printf(" %p %p", (void *)1234, (void *)1234);
+	   ftprint = ft_printf("%x", 12345);
+	   printf("\n");
+	   prinf = printf("%x", 12345);
 
 	   printf("\n%d   ->    %d", ftprint, prinf);
 	return(0);
