@@ -1,23 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                        :+:      :+:    :+:  */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marancib <marancib@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/19 19:24:43 by marancib          #+#    #+#             */
-/*   Updated: 2023/05/27 17:12:58 by marancib         ###   ########.fr       */
+/*   Created: 2023/05/25 15:51:14 by marancib          #+#    #+#             */
+/*   Updated: 2023/05/25 15:51:15 by marancib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isalnum(int c)
-{
-	int	isalnum;
+#include"get_next_line.h"
+#include <stdio.h>
+# include <stdlib.h>
+# include <unistd.h>
+#include<fcntl.h>
 
-	isalnum = 0 ;
-	if ((c >= '0' && c <= '9') || \
-		(c >= 'A' && c <= 'Z') || \
-		(c >= 'a' && c <= 'z'))
-		isalnum = 1;
-	return (isalnum);
+int	main(void)
+{
+	int		fd;
+	char	buff[1024];
+
+	fd = open("example.txt", O_RDONLY);
+	read(fd, buff, 1024);
+	printf("\n\n%s\n\n",buff);
 }

@@ -1,23 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                        :+:      :+:    :+:  */
+/*   ft_prints.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marancib <marancib@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/19 19:24:43 by marancib          #+#    #+#             */
-/*   Updated: 2023/05/27 17:12:58 by marancib         ###   ########.fr       */
+/*   Created: 2023/05/26 14:54:11 by marancib          #+#    #+#             */
+/*   Updated: 2023/05/26 14:54:12 by marancib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isalnum(int c)
-{
-	int	isalnum;
+#include"libft.h"
+#include"ft_printf.h"
 
-	isalnum = 0 ;
-	if ((c >= '0' && c <= '9') || \
-		(c >= 'A' && c <= 'Z') || \
-		(c >= 'a' && c <= 'z'))
-		isalnum = 1;
-	return (isalnum);
+int	ft_printstr(char *str)
+{
+	int	len;
+
+	if (!str)
+	{
+		if (write (1, "(null)", 6) == -1)
+			return (-1);
+		return (6);
+	}
+	len = ft_strlen(str);
+	if (write(1, str, len) == -1)
+		return (-1);
+	return (len);
 }

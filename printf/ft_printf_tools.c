@@ -10,8 +10,15 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"../include/libft.h"
-#include"../include/ft_printf.h"
+#include"libft.h"
+#include"ft_printf.h"
+
+int	ft_printchr(unsigned char c)
+{
+	if (write(1, &c, 1) == -1)
+		return (-1);
+	return (1);
+}
 
 int	ft_counternbr(unsigned int nbr)
 {

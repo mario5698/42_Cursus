@@ -6,11 +6,11 @@
 /*   By: marancib <marancib@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 16:24:23 by marancib          #+#    #+#             */
-/*   Updated: 2023/05/15 16:24:24 by marancib         ###   ########.fr       */
+/*   Updated: 2023/05/27 17:19:50 by marancib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<libft.h>
+#include"libft.h"
 
 int	ft_lstsize(t_list *lst)
 {

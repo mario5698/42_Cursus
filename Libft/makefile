@@ -1,10 +1,10 @@
 #Standard
 NAME		=	libft.a
-INCLUDES	=	-I ./
+INCLUDES	=	./
 SRCS_DIR 	=	./
 OBJS_DIR	=	obj/
-CC			=	gcc
-CFLAGS		=	-Wall -Werror -Wextra 
+CC			= 	gcc
+CFLAGS		=	-Wall -Werror -Wextra -I
 RM			=	rm -f
 AR			=	ar rcs
 
@@ -49,7 +49,7 @@ $(NAME):	$(OBJS)
 			@$(AR) $(NAME) $(OBJS)
 			@echo "\n$(GREEN)Libft compiled!$(DEF_COLOR)"
 
-$(OBJS_DIR)%.o : $(SRCS_DIR)%.c | $(OBJSF)
+$(OBJS_DIR)%.o : $(SRCS_DIR)%.c libft.h Makefile | $(OBJSF) 
 	@printf "$(YELLOW)\rCompiling: $< $(DEF_COLOR)"
 	@$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
 
@@ -79,5 +79,4 @@ bonus:	.bonus
 			@printf "$(YELLOW)\rCompiling BONUS: $< $(DEF_COLOR)"
 			@echo "\n$(GREEN)\rLibft bonus compiled!$(DEF_COLOR)"
 			@touch .bonus
-
-.PHONY:		all clean fclean re norm bonus
+.PHONY:		all clean fclean re norm

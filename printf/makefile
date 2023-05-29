@@ -1,7 +1,7 @@
 #------------Standard----------
 NAME		=	libftprintf.a
-INCLUDES	=	includes
-SRCS_DIR 	=	src/
+INCLUDES	=	include
+SRCS_DIR 	=	./
 OBJS_DIR	=	obj/
 CC			=	gcc
 CFLAGS		=	-Wall -Werror -Wextra -I
@@ -20,7 +20,7 @@ MAGENTA = \033[0;95m
 CYAN = \033[0;96m
 WHITE = \033[0;97m
 #------------Prefix------------ 
-PRFILES		=	ft_printf ft_printf_hex  ft_printf_tools
+PRFILES		=	ft_printf ft_printf_tools ft_printfid ft_printfp ft_printfu ft_printfs ft_printfxX
 
 
 SRC_FILES+=$(PRFILES)

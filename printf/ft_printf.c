@@ -10,49 +10,18 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<stdio.h>
-#include<stdlib.h>
-#include<stdarg.h>
-#include<unistd.h>
-#include"../include/libft.h"
-#include"../include/ft_printf.h"
+#include"libft.h"
+#include"ft_printf.h"
 
-int	ft_printstr(char *str)
+static int	ft_hex(unsigned int nbr, int c)
 {
-	int	len;
+	int	num;
 
-	if (!str)
-	{
-		if (write (1, "(null)", 6) == -1)
-			return (-1);
-		return (6);
-	}
-	len = ft_strlen(str);
-	if (write(1, str, len) == -1)
-		return (-1);
-	return (len);
-}
-
-int	ft_printchr(unsigned char c)
-{
-	if (write(1, &c, 1) == -1)
-		return (-1);
-	return (1);
-}
-
-int	ft_printnbr(int nbr)
-{
-	int		counter;
-	char	*str;
-
-	str = ft_itoa(nbr);
-	if (str == NULL)
-		return (-1);
-	counter = ft_printstr(str);
-	free(str);
-	if (counter == -1)
-		return (-1);
-	return (counter);
+	if (c == 'X')
+		num = ft_printnbr_hex(nbr, "0123456789ABCDEF");
+	else
+		num = ft_printnbr_hex(nbr, "0123456789abcdef");
+	return (num);
 }
 
 int	ft_formats(va_list argvs, char c)
@@ -67,14 +36,13 @@ int	ft_formats(va_list argvs, char c)
 	else if (c == 'd' || c == 'i')
 		numprint = ft_printnbr(va_arg(argvs, int));
 	else if (c == 'x' || c == 'X')
-		numprint = ft_printnbr_hex(va_arg(argvs, unsigned int), c);
+		numprint += ft_hex(va_arg(argvs, int), c);
 	else if (c == 'p')
 		numprint = ft_printadrr_hex(va_arg(argvs, unsigned long));
-	/*
+	else if (c == '%')
+		numprint = ft_printchr('%');
 	else if (c == 'u')
 		numprint = ft_printnbr_dec(va_arg(argvs, int));
-	*/else if (c == '%')
-		numprint = ft_printchr('%');
 	return (numprint);
 }
 
@@ -91,7 +59,7 @@ int	ft_printf(const char *string, ...)
 	{
 		if (string[i] == '%')
 		{
-			counterchars += ft_formats(argv, string[i+1]);
+			counterchars += ft_formats(argv, string[i + 1]);
 			i++;
 		}
 		else
