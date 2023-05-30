@@ -3,8 +3,8 @@ NAME		=	libft.a
 INCLUDES	=	./
 SRCS_DIR 	=	./
 OBJS_DIR	=	obj/
-CC			= 	gcc
-CFLAGS		=	-Wall -Werror -Wextra -I
+CC			=	gcc
+CFLAGS		=	-Wall -Werror -Wextra -MMD -I  
 RM			=	rm -f
 AR			=	ar rcs
 
@@ -33,50 +33,60 @@ FTFILES		=	ft_isalnum ft_isalpha ft_isascii ft_isdigit ft_isprint \
 FTBONUS		=	ft_lstnew_bonus ft_lstadd_front_bonus ft_lstsize_bonus ft_lstlast_bonus ft_lstadd_back_bonus \
 				ft_lstdelone_bonus ft_lstclear_bonus ft_lstiter_bonus ft_lstmap_bonus
 
-SRC_FILES+=$(addprefix $(SRCS_DIR),$(FTFILES))
+SRC_FILES+= $(addprefix $(SRCS_DIR),$(FTFILES))
 SRCS 		= 	$(addprefix $(SRCS_DIR), $(addsuffix .c, $(SRC_FILES)))
 OBJS 		= 	$(addprefix $(OBJS_DIR), $(addsuffix .o, $(SRC_FILES)))
 
 SRC_BONUS+=$(addprefix $(SRCS_DIR),$(FTBONUS))
 SRCS_BONUS	= 	$(addprefix $(SRCS_DIR), $(addsuffix .c, $(SRC_BONUS)))
 OBJS_BONUS	= 	$(addprefix $(OBJS_DIR), $(addsuffix .o, $(SRC_BONUS)))
+
+DEPENDS		=	$(addprefix $(OBJS_DIR), $(addsuffix .d, $(SRC_FILES)))
+DEPENDS_BONUS	= $(addprefix $(OBJS_DIR), $(addsuffix .d, $(SRC_BONUS)))
+
 #####################################################################
 OBJSF		=	.cache_exists
 
 all:		$(NAME)
 
+ifndef BONUS
 $(NAME):	$(OBJS)
-			@$(AR) $(NAME) $(OBJS)
-			@echo "\n$(GREEN)Libft compiled!$(DEF_COLOR)"
+			$(AR) $(NAME) $(OBJS)
+			echo "\n$(GREEN)Libft compiled!$(DEF_COLOR)"
+else
+$(NAME):	$(OBJS) $(OBJS_BONUS)
+			$(AR) $(NAME) $(OBJS) $(OBJS_BONUS)
+			echo "\n$(GREEN)Libft compiled!$(DEF_COLOR)"
+endif
 
-$(OBJS_DIR)%.o : $(SRCS_DIR)%.c libft.h Makefile | $(OBJSF) 
-	@printf "$(YELLOW)\rCompiling: $< $(DEF_COLOR)"
-	@$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
+$(OBJS_DIR)%.o : $(SRCS_DIR)%.c Makefile | $(OBJSF)
+	printf "$(YELLOW)\rCompiling: $< $(DEF_COLOR)"
+	$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
 
 $(OBJSF):
-	@mkdir -p $(OBJS_DIR)
+	mkdir -p $(OBJS_DIR)
 
 clean:
-	@$(RM) -rf $(OBJS_DIR)
-	@$(RM) -f $(OBJSF)
-	@echo "$(BLUE)libft objects files cleaned!$(DEF_COLOR)"
+	$(RM) -rf $(OBJS_DIR)
+	$(RM) -f $(OBJSF)
+	echo "$(BLUE)libft objects files cleaned!$(DEF_COLOR)"
 
 fclean:		clean
-	@$(RM) -f $(NAME)
-	@$(RM) -f .bonus
-	@echo "$(CYAN)libft executable files cleaned!$(DEF_COLOR)"
+	$(RM) -f $(NAME)
+	$(RM) -f .bonus
+	echo "$(CYAN)libft executable files cleaned!$(DEF_COLOR)"
 
 re:			fclean all
-	@echo "$(GREEN)Cleaned and rebuilt everything for libft!$(DEF_COLOR)"
+	echo "$(GREEN)Cleaned and rebuilt everything for libft!$(DEF_COLOR)"
 
 norm:
-	@norminette $(SRCS) $(INCLUDES) | grep -v Norme -B1 || true
+	norminette $(SRCS) $(INCLUDES) | grep -v Norme -B1 || true
 
-bonus:	.bonus
+bonus:
+	$(MAKE) BONUS=1 $(NAME)
 
-.bonus: $(OBJS) $(OBJS_BONUS)
-			@$(AR) $(NAME) $(OBJS) $(OBJS_BONUS) 
-			@printf "$(YELLOW)\rCompiling BONUS: $< $(DEF_COLOR)"
-			@echo "\n$(GREEN)\rLibft bonus compiled!$(DEF_COLOR)"
-			@touch .bonus
-.PHONY:		all clean fclean re norm
+.PHONY:		all clean fclean re norm bonus
+.SILENT:
+
+-include $(DEPENDS)
+-include $(DEPENDS_BONUS)
