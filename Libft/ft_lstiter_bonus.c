@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"libft.h"
+#include "libft.h"
 
 void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
@@ -23,30 +23,3 @@ void	ft_lstiter(t_list *lst, void (*f)(void *))
 	}
 	lst = NULL;
 }
-
-/*
-	int		count;
-	t_list	*temp;
-
-	count = 0;
-	temp = lst;
-	while (temp->next != NULL)
-	{
-		count++;
-		temp = temp->next;
-	}
-	if (temp->next == NULL)
-		count++;
-	return (count);
-
-	t_list *ptr;
-	if (lst == NULL || del == NULL)
-		return ;
-	while (*lst != NULL)
-	{
-		ptr = (*lst)->next;
-		ft_lstdelone(*lst, del);
-		*lst = ptr;
-	}
-	*lst = NULL;
-*/

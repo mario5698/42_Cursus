@@ -49,15 +49,19 @@ OBJSF		=	.cache_exists
 
 all:		$(NAME)
 
-ifndef BONUS
+# ifndef BONUS
+# $(NAME):	$(OBJS)
+# 			$(AR) $(NAME) $(OBJS)
+# 			echo "\n$(GREEN)Libft compiled!$(DEF_COLOR)"
+# else
+# $(NAME):	$(OBJS) $(OBJS_BONUS)
+# 			$(AR) $(NAME) $(OBJS) $(OBJS_BONUS)
+# 			echo "\n$(GREEN)Libft compiled!$(DEF_COLOR)"
+# endif
+
 $(NAME):	$(OBJS)
 			$(AR) $(NAME) $(OBJS)
 			echo "\n$(GREEN)Libft compiled!$(DEF_COLOR)"
-else
-$(NAME):	$(OBJS) $(OBJS_BONUS)
-			$(AR) $(NAME) $(OBJS) $(OBJS_BONUS)
-			echo "\n$(GREEN)Libft compiled!$(DEF_COLOR)"
-endif
 
 $(OBJS_DIR)%.o : $(SRCS_DIR)%.c Makefile | $(OBJSF)
 	printf "$(YELLOW)\rCompiling: $< $(DEF_COLOR)"
@@ -82,8 +86,13 @@ re:			fclean all
 norm:
 	norminette $(SRCS) $(INCLUDES) | grep -v Norme -B1 || true
 
-bonus:
-	$(MAKE) BONUS=1 $(NAME)
+bonus: .bonus
+
+.bonus:	$(OBJS) $(OBJS_BONUS) 
+			$(AR) $(NAME) $(OBJS) $(OBJS_BONUS)
+			echo "\n$(GREEN)Libft compiled!$(DEF_COLOR)"
+			touch .bonus
+# $(MAKE) BONUS=1 $(NAME)
 
 .PHONY:		all clean fclean re norm bonus
 .SILENT:
