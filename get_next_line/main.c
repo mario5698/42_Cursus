@@ -22,6 +22,6 @@ int	main(void)
 	char	buff[1024];
 
 	fd = open("example.txt", O_RDONLY);
-	read(fd, buff, 1024);
-	printf("\n\n%s\n\n",buff);
+
+	printf("\n\n%s\n\n",get_next_line(fd, ));
 }

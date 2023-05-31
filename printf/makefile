@@ -4,7 +4,7 @@ INCLUDES	=	include
 SRCS_DIR 	=	./
 OBJS_DIR	=	obj/
 CC			=	gcc
-CFLAGS		=	-Wall -Werror -Wextra -I
+CFLAGS		=	-Wall -Werror -Wextra -MMD -I
 RM			=	rm -rf
 AR			=	ar rcs
 LIBFT		=	libft/ 
@@ -27,6 +27,7 @@ SRC_FILES+=$(PRFILES)
 
 SRCS 		= 	$(addprefix $(SRCS_DIR), $(addsuffix .c, $(SRC_FILES)))
 OBJS 		= 	$(addprefix $(OBJS_DIR), $(addsuffix .o, $(SRC_FILES)))
+DEPENDS		=   $(addprefix $(OBJS_DIR), $(addsuffix .d, $(OBJS)))
 OBJSF		=	.cache_exists
 
 all:		$(NAME)
@@ -38,7 +39,7 @@ $(NAME):	$(OBJS)
 			@$(AR) $(NAME) $(OBJS)
 			@echo "\n$(GREEN)LibftPrintf compiled!$(DEF_COLOR)"
 
-$(OBJS_DIR)%.o : $(SRCS_DIR)%.c | $(OBJSF)
+$(OBJS_DIR)%.o : $(SRCS_DIR)%.c Makefile ft_printf.h | $(OBJSF)
 	@printf "$(YELLOW)\rCompiling: $< $(DEF_COLOR)"
 	@$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
 
@@ -51,6 +52,8 @@ clean:
 	@$(RM) $(OBJS_DIR)
 	@$(RM) $(OBJSF)
 	@echo "$(BLUE)libft objects files cleaned!$(DEF_COLOR)"
+
+f: fclean
 
 fclean:		clean
 	@$(RM) $(NAME)
@@ -65,3 +68,5 @@ norm:
 	@norminette $(SRCS) $(INCLUDES) | grep -v Norme -B1 || true
 
 .PHONY:		all clean fclean re norm
+
+-include $(DEPENDS)
