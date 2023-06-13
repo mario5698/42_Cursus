@@ -6,7 +6,7 @@
 /*   By: marancib <marancib@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 10:56:10 by marancib          #+#    #+#             */
-/*   Updated: 2023/05/23 12:25:59 by marancib         ###   ########.fr       */
+/*   Updated: 2023/06/06 21:57:38 by marancib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,19 +51,22 @@ int	ft_printf(const char *string, ...)
 	va_list	argv;
 	int		i;
 	int		counterchars;
+	int		tmp;
 
+	tmp = 0;
 	i = 0;
 	counterchars = 0;
 	va_start(argv, string);
 	while (string[i] != '\0')
 	{
 		if (string[i] == '%')
-		{
-			counterchars += ft_formats(argv, string[i + 1]);
-			i++;
-		}
+			tmp = ft_formats(argv, string[++i]);
 		else
-			counterchars += ft_printchr(string[i]);
+			tmp = ft_printchr(string[i]);
+		if (tmp == -1)
+			return (-1);
+		else
+			counterchars += tmp;
 		i++;
 	}
 	va_end(argv);
