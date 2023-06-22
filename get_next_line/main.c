@@ -23,5 +23,5 @@ int	main(void)
 
 	fd = open("example.txt", O_RDONLY);
 
-	printf("\n\n%s\n\n",get_next_line(fd, ));
+	printf("\n\n%s\n\n",get_next_line(fd));
 }
