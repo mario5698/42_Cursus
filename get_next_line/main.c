@@ -6,7 +6,7 @@
 /*   By: marancib <marancib@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/25 15:51:14 by marancib          #+#    #+#             */
-/*   Updated: 2023/05/25 15:51:15 by marancib         ###   ########.fr       */
+/*   Updated: 2023/07/29 19:20:22 by marancib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 int	main(void)
 {
 	int		fd;
-	char	buff[1024];
+//	char	buff[1024];
 
 	fd = open("example.txt", O_RDONLY);
 
